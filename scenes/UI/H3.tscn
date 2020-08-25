@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://assets/Roboto/Roboto-Medium.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 25
+outline_size = 2
+use_mipmaps = true
+use_filter = true
+extra_spacing_top = -5
+font_data = SubResource( 1 )
+
+[node name="H3" type="Label"]
+margin_top = 96.0
+margin_right = 216.0
+margin_bottom = 122.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.701961, 0.313726, 0.243137, 1 )
+custom_colors/font_outline_modulate = Color( 0.203922, 0.294118, 0.341176, 0 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/line_spacing = 0
+text = "Game programmer"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
