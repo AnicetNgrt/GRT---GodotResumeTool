@@ -1,0 +1,403 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://scenes/CV/Label.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/Roboto/Roboto-Medium.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://scenes/UI/H1.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/UI/H3.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/UI/Article.tscn" type="PackedScene" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 22
+outline_color = Color( 0.117647, 0.133333, 0.141176, 1 )
+use_mipmaps = true
+use_filter = true
+extra_spacing_bottom = 2
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFontData" id=2]
+font_path = "res://assets/Roboto/Roboto-Medium.ttf"
+
+[sub_resource type="DynamicFont" id=3]
+size = 45
+outline_size = 2
+use_mipmaps = true
+use_filter = true
+extra_spacing_top = -10
+font_data = SubResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 18
+outline_color = Color( 0.117647, 0.133333, 0.141176, 1 )
+use_mipmaps = true
+use_filter = true
+extra_spacing_bottom = 2
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFontData" id=5]
+font_path = "res://assets/Roboto/Roboto-Medium.ttf"
+
+[sub_resource type="DynamicFont" id=6]
+size = 28
+outline_size = 2
+use_mipmaps = true
+use_filter = true
+extra_spacing_top = -5
+font_data = SubResource( 5 )
+
+[node name="SharedPart" type="MarginContainer"]
+margin_left = 433.0
+margin_right = 1128.0
+margin_bottom = 1599.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 6.2
+custom_constants/margin_right = 25
+custom_constants/margin_top = 35
+custom_constants/margin_bottom = 45
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Content" type="VBoxContainer" parent="."]
+margin_top = 35.0
+margin_right = 670.0
+margin_bottom = 1554.0
+custom_constants/separation = 45
+
+[node name="Article" parent="Content" instance=ExtResource( 5 )]
+margin_right = 670.0
+margin_bottom = 87.0
+
+[node name="Margin" type="MarginContainer" parent="Content/Article"]
+margin_right = 670.0
+margin_bottom = 87.0
+
+[node name="Label" parent="Content/Article/Margin" instance=ExtResource( 1 )]
+margin_top = 0.0
+margin_right = 670.0
+margin_bottom = 87.0
+custom_fonts/font = SubResource( 1 )
+custom_constants/line_spacing = 0
+text = "19 year old second year IT student. 4+ years experience as a front- and back-end developer. Worked on several released games and tools, both in solo and team projects."
+align = 0
+
+[node name="Article2" parent="Content" instance=ExtResource( 5 )]
+margin_top = 132.0
+margin_right = 670.0
+margin_bottom = 1111.0
+custom_constants/separation = 25
+
+[node name="H1" parent="Content/Article2" instance=ExtResource( 3 )]
+margin_right = 670.0
+margin_bottom = 43.0
+custom_fonts/font = SubResource( 3 )
+text = "Projects"
+
+[node name="Project2" type="MarginContainer" parent="Content/Article2"]
+margin_top = 68.0
+margin_right = 670.0
+margin_bottom = 373.0
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+
+[node name="ProjectContent" type="VBoxContainer" parent="Content/Article2/Project2"]
+margin_left = 10.0
+margin_right = 670.0
+margin_bottom = 295.0
+custom_constants/separation = 17
+
+[node name="Meta" type="VBoxContainer" parent="Content/Article2/Project2/ProjectContent"]
+margin_right = 660.0
+margin_bottom = 56.0
+
+[node name="Label" parent="Content/Article2/Project2/ProjectContent/Meta" instance=ExtResource( 1 )]
+margin_top = 0.0
+margin_right = 660.0
+margin_bottom = 24.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.501961, 0.6, 0.639216, 1 )
+custom_constants/line_spacing = 0
+text = "June 2019 -> Now  -  Solo-developed"
+align = 0
+
+[node name="H3" parent="Content/Article2/Project2/ProjectContent/Meta" instance=ExtResource( 4 )]
+margin_top = 28.0
+margin_right = 660.0
+margin_bottom = 56.0
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "\"Zugzwang/Patherns\": Online strategy game"
+
+[node name="ProjectDesc" type="MarginContainer" parent="Content/Article2/Project2/ProjectContent"]
+margin_top = 73.0
+margin_right = 660.0
+margin_bottom = 295.0
+custom_constants/margin_left = 35
+
+[node name="Paragraphs" type="VBoxContainer" parent="Content/Article2/Project2/ProjectContent/ProjectDesc"]
+margin_left = 35.0
+margin_right = 660.0
+margin_bottom = 222.0
+
+[node name="Label2" parent="Content/Article2/Project2/ProjectContent/ProjectDesc/Paragraphs" instance=ExtResource( 1 )]
+margin_top = 0.0
+margin_right = 625.0
+margin_bottom = 222.0
+custom_fonts/font = SubResource( 4 )
+text = "First commercial development attempt. Went through several iterations, involving paper prototypes and several large refactors. Required learning several new technologies to develop a minimum viable product.
+
+Made a web prototype using React, Typescript and Electron.
+Made a desktop prototype using Godot Engine and MongoDB.
+
+Now working on a board game logic engine, online multiplayer matches, persistent player profiles management, AI player and game visualization/move editor."
+align = 0
+
+[node name="Project3" type="MarginContainer" parent="Content/Article2"]
+margin_top = 398.0
+margin_right = 670.0
+margin_bottom = 741.0
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+
+[node name="ProjectContent" type="VBoxContainer" parent="Content/Article2/Project3"]
+margin_left = 10.0
+margin_right = 670.0
+margin_bottom = 333.0
+custom_constants/separation = 17
+
+[node name="Meta" type="VBoxContainer" parent="Content/Article2/Project3/ProjectContent"]
+margin_right = 660.0
+margin_bottom = 56.0
+
+[node name="Label" parent="Content/Article2/Project3/ProjectContent/Meta" instance=ExtResource( 1 )]
+margin_top = 0.0
+margin_right = 660.0
+margin_bottom = 24.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.501961, 0.6, 0.639216, 1 )
+custom_constants/line_spacing = 0
+text = "August 2019 -> February 2020  -  Solo-developed"
+align = 0
+
+[node name="H3" parent="Content/Article2/Project3/ProjectContent/Meta" instance=ExtResource( 4 )]
+margin_top = 28.0
+margin_right = 660.0
+margin_bottom = 56.0
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "\"Flore1\": Python Graphics Library / Game Engine"
+
+[node name="ProjectDesc" type="MarginContainer" parent="Content/Article2/Project3/ProjectContent"]
+margin_top = 73.0
+margin_right = 660.0
+margin_bottom = 333.0
+custom_constants/margin_left = 35
+
+[node name="Paragraphs" type="VBoxContainer" parent="Content/Article2/Project3/ProjectContent/ProjectDesc"]
+margin_left = 35.0
+margin_right = 660.0
+margin_bottom = 260.0
+
+[node name="Label2" parent="Content/Article2/Project3/ProjectContent/ProjectDesc/Paragraphs" instance=ExtResource( 1 )]
+margin_top = 0.0
+margin_right = 625.0
+margin_bottom = 156.0
+custom_fonts/font = SubResource( 4 )
+text = "Ambitious Python 2D layer-based game engine rendering in the terminal. 1 pixel being rendered as two coloured space characters.
+
+Made an ANSI-art painting and frame-by-frame animating software for the terminal called \"Flore1-Paint\".  Flore1's API enabled me to create this in 1 day and with less than 1000 line of code.
+"
+align = 0
+
+[node name="Label4" parent="Content/Article2/Project3/ProjectContent/ProjectDesc/Paragraphs" instance=ExtResource( 1 )]
+margin_top = 160.0
+margin_right = 625.0
+margin_bottom = 184.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.501961, 0.6, 0.639216, 1 )
+custom_constants/line_spacing = 0
+text = "Implemented systems:"
+align = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Content/Article2/Project3/ProjectContent/ProjectDesc/Paragraphs"]
+margin_top = 188.0
+margin_right = 625.0
+margin_bottom = 260.0
+
+[node name="Label3" parent="Content/Article2/Project3/ProjectContent/ProjectDesc/Paragraphs/HBoxContainer" instance=ExtResource( 1 )]
+margin_top = 0.0
+margin_right = 310.0
+margin_bottom = 72.0
+custom_fonts/font = SubResource( 4 )
+custom_constants/line_spacing = 0
+text = "- 30+fps multi-layer 2D rendering
+- Files and assets management
+- picture files to ANSI rendering"
+align = 0
+
+[node name="Label4" parent="Content/Article2/Project3/ProjectContent/ProjectDesc/Paragraphs/HBoxContainer" instance=ExtResource( 1 )]
+margin_left = 314.0
+margin_top = 0.0
+margin_right = 625.0
+margin_bottom = 72.0
+size_flags_vertical = 5
+custom_fonts/font = SubResource( 4 )
+custom_constants/line_spacing = 0
+text = "- Animation players
+- Inputs handling
+- FPS and speed stabilization"
+align = 0
+
+[node name="Project4" type="MarginContainer" parent="Content/Article2"]
+margin_top = 766.0
+margin_right = 670.0
+margin_bottom = 979.0
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 20
+
+[node name="ProjectContent" type="VBoxContainer" parent="Content/Article2/Project4"]
+margin_left = 10.0
+margin_right = 670.0
+margin_bottom = 193.0
+custom_constants/separation = 17
+
+[node name="Meta" type="VBoxContainer" parent="Content/Article2/Project4/ProjectContent"]
+margin_right = 660.0
+margin_bottom = 28.0
+
+[node name="H3" parent="Content/Article2/Project4/ProjectContent/Meta" instance=ExtResource( 4 )]
+margin_top = 0.0
+margin_right = 660.0
+margin_bottom = 28.0
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "For classwork"
+
+[node name="ProjectDesc" type="MarginContainer" parent="Content/Article2/Project4/ProjectContent"]
+margin_top = 45.0
+margin_right = 660.0
+margin_bottom = 193.0
+custom_constants/margin_left = 35
+
+[node name="Paragraphs" type="VBoxContainer" parent="Content/Article2/Project4/ProjectContent/ProjectDesc"]
+margin_left = 35.0
+margin_right = 660.0
+margin_bottom = 148.0
+
+[node name="Label4" parent="Content/Article2/Project4/ProjectContent/ProjectDesc/Paragraphs" instance=ExtResource( 1 )]
+margin_top = 0.0
+margin_right = 625.0
+margin_bottom = 24.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.501961, 0.6, 0.639216, 1 )
+custom_constants/line_spacing = 0
+text = "Some projects I carried out in teams of 2 to 5 students:"
+align = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Content/Article2/Project4/ProjectContent/ProjectDesc/Paragraphs"]
+margin_top = 28.0
+margin_right = 625.0
+margin_bottom = 148.0
+
+[node name="Label3" parent="Content/Article2/Project4/ProjectContent/ProjectDesc/Paragraphs/HBoxContainer" instance=ExtResource( 1 )]
+margin_top = 0.0
+margin_right = 310.0
+margin_bottom = 120.0
+custom_fonts/font = SubResource( 4 )
+custom_constants/line_spacing = 0
+text = "- Offline user registering and profiling service in C
+- Maze solver in C
+- Userbase registration and handling software with vb.NET"
+align = 0
+
+[node name="Label4" parent="Content/Article2/Project4/ProjectContent/ProjectDesc/Paragraphs/HBoxContainer" instance=ExtResource( 1 )]
+margin_left = 314.0
+margin_top = 0.0
+margin_right = 625.0
+margin_bottom = 120.0
+size_flags_vertical = 5
+custom_fonts/font = SubResource( 4 )
+custom_constants/line_spacing = 0
+text = "- Research on topic: \"Environmental impact of IT and solutions\"
+- SQL database and GUI with Access
+- TIler game in Java"
+align = 0
+
+[node name="Article3" parent="Content" instance=ExtResource( 5 )]
+margin_top = 1156.0
+margin_right = 670.0
+margin_bottom = 1361.0
+custom_constants/separation = 25
+
+[node name="H1" parent="Content/Article3" instance=ExtResource( 3 )]
+margin_right = 670.0
+margin_bottom = 43.0
+custom_fonts/font = SubResource( 3 )
+text = "Education"
+
+[node name="Education2" type="MarginContainer" parent="Content/Article3"]
+margin_top = 68.0
+margin_right = 670.0
+margin_bottom = 124.0
+custom_constants/margin_left = 10
+
+[node name="EducationContent" type="VBoxContainer" parent="Content/Article3/Education2"]
+margin_left = 10.0
+margin_right = 670.0
+margin_bottom = 56.0
+custom_constants/separation = 17
+
+[node name="Meta" type="VBoxContainer" parent="Content/Article3/Education2/EducationContent"]
+margin_right = 660.0
+margin_bottom = 56.0
+
+[node name="Label" parent="Content/Article3/Education2/EducationContent/Meta" instance=ExtResource( 1 )]
+margin_top = 0.0
+margin_right = 660.0
+margin_bottom = 24.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.501961, 0.6, 0.639216, 1 )
+custom_constants/line_spacing = 0
+text = "September 2019 -> June 2020"
+align = 0
+
+[node name="H3" parent="Content/Article3/Education2/EducationContent/Meta" instance=ExtResource( 4 )]
+margin_top = 28.0
+margin_right = 660.0
+margin_bottom = 56.0
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "IUT de Paris - First year studying IT"
+
+[node name="Education" type="MarginContainer" parent="Content/Article3"]
+margin_top = 149.0
+margin_right = 670.0
+margin_bottom = 205.0
+custom_constants/margin_left = 10
+
+[node name="EducationContent" type="VBoxContainer" parent="Content/Article3/Education"]
+margin_left = 10.0
+margin_right = 670.0
+margin_bottom = 56.0
+custom_constants/separation = 17
+
+[node name="Meta" type="VBoxContainer" parent="Content/Article3/Education/EducationContent"]
+margin_right = 660.0
+margin_bottom = 56.0
+
+[node name="Label" parent="Content/Article3/Education/EducationContent/Meta" instance=ExtResource( 1 )]
+margin_top = 0.0
+margin_right = 660.0
+margin_bottom = 24.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.501961, 0.6, 0.639216, 1 )
+custom_constants/line_spacing = 0
+text = "July 2019"
+align = 0
+
+[node name="H3" parent="Content/Article3/Education/EducationContent/Meta" instance=ExtResource( 4 )]
+margin_top = 28.0
+margin_right = 660.0
+margin_bottom = 56.0
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "French Scientific \"Baccalauréat\" with honors"

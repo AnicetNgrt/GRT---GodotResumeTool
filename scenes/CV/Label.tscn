@@ -3,6 +3,7 @@
 [ext_resource path="res://assets/Roboto/Roboto-Medium.ttf" type="DynamicFontData" id=1]
 
 [sub_resource type="DynamicFont" id=1]
+size = 18
 outline_color = Color( 0.117647, 0.133333, 0.141176, 1 )
 use_mipmaps = true
 use_filter = true
@@ -15,12 +16,11 @@ margin_right = 96.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
 custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0.380392, 0.866667, 0.603922, 1 )
-custom_colors/font_color_shadow = Color( 0.117647, 0.133333, 0.141176, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = -2
 custom_constants/line_spacing = -2
 custom_constants/shadow_offset_y = 2
-align = 2
+align = 1
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false

@@ -12,3 +12,10 @@ func set_progress(val):
 	progress = val
 	if not is_inside_tree(): yield(self,"ready")
 	$Margin/Content/ProgressBar.value = val
+
+export(bool) var show_bar = true setget set_show_bar
+func set_show_bar(val):
+	show_bar = val
+	if not is_inside_tree(): yield(self,"ready")
+	$Margin/Content/ProgressBar.visible = show_bar
+

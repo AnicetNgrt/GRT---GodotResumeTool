@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scenes/UI/H3.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/UI/Article.tscn" type="PackedScene" id=2]
@@ -9,8 +9,12 @@
 [ext_resource path="res://scenes/CV/Singleline.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/CV/Label.tscn" type="PackedScene" id=8]
 [ext_resource path="res://assets/Roboto/Roboto-Medium.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://scenes/CV/Cv.gd" type="Script" id=10]
+[ext_resource path="res://scenes/CV/SharedPart.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/CV/Separator.tscn" type="PackedScene" id=12]
 
 [sub_resource type="DynamicFont" id=1]
+size = 14
 outline_color = Color( 0.117647, 0.133333, 0.141176, 1 )
 use_mipmaps = true
 use_filter = true
@@ -20,14 +24,16 @@ font_data = ExtResource( 9 )
 [node name="Cv" type="Control"]
 anchor_left = 0.5
 anchor_top = 0.5
-anchor_right = 0.534
+anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -579.547
-margin_top = -861.157
-margin_right = 520.453
-margin_bottom = 838.843
+margin_left = -582.0
+margin_top = -791.0
+margin_right = 576.0
+margin_bottom = 848.0
+rect_scale = Vector2( 2, 2 )
 rect_pivot_offset = Vector2( 578.9, 850 )
 rect_clip_content = true
+script = ExtResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -35,7 +41,6 @@ __meta__ = {
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0.117647, 0.133333, 0.141176, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -44,811 +49,765 @@ __meta__ = {
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -28.0
-margin_right = 0.0
-margin_bottom = -7.0
-custom_colors/font_color = Color( 0.701961, 0.313726, 0.243137, 1 )
-text = "Side note: This resume was designed and built entirely within Godot Engine, a game engine I'm using to create most of my games."
-align = 1
+margin_left = -22.0
+margin_top = -24.0
+margin_right = -22.0
+margin_bottom = 0.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.180392, 0.458824, 0.74902, 1 )
+text = "Side note: This resume was designed and built using my own UI tools for Godot Engine"
 
-[node name="Margin" type="MarginContainer" parent="."]
+[node name="GDEVversion" type="MarginContainer" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_bottom = -18.0
 custom_constants/margin_right = 15
-custom_constants/margin_top = 5
+custom_constants/margin_top = 15
 custom_constants/margin_left = 15
 custom_constants/margin_bottom = 25
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Body" type="HBoxContainer" parent="Margin"]
-margin_left = 15.0
-margin_top = 5.0
-margin_right = 1142.0
-margin_bottom = 1657.0
-
-[node name="Left" type="MarginContainer" parent="Margin/Body"]
-margin_right = 353.0
-margin_bottom = 1652.0
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 3.0
-custom_constants/margin_top = 15
-custom_constants/margin_left = 15
-
-[node name="Content" type="VBoxContainer" parent="Margin/Body/Left"]
+[node name="Body" type="HBoxContainer" parent="GDEVversion"]
 margin_left = 15.0
 margin_top = 15.0
-margin_right = 353.0
-margin_bottom = 1652.0
-custom_constants/separation = 30
+margin_right = 1143.0
+margin_bottom = 1614.0
 
-[node name="Name" parent="Margin/Body/Left/Content" instance=ExtResource( 2 )]
-margin_right = 338.0
-margin_bottom = 122.0
+[node name="Left" type="MarginContainer" parent="GDEVversion/Body"]
+margin_right = 391.0
+margin_bottom = 1599.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.5
+custom_constants/margin_top = 25
+custom_constants/margin_left = 25
+custom_constants/margin_bottom = 0
 
-[node name="H1" parent="Margin/Body/Left/Content/Name" instance=ExtResource( 3 )]
-margin_right = 338.0
+[node name="Name" parent="GDEVversion/Body/Left" instance=ExtResource( 2 )]
+margin_left = 25.0
+margin_top = 25.0
+margin_right = 391.0
+margin_bottom = 1599.0
 
-[node name="H3" parent="Margin/Body/Left/Content/Name" instance=ExtResource( 1 )]
-margin_right = 338.0
+[node name="H1" parent="GDEVversion/Body/Left/Name" instance=ExtResource( 3 )]
+margin_right = 366.0
+margin_bottom = 43.0
+custom_colors/font_color = Color( 0.501961, 0.6, 0.639216, 1 )
+text = "Anicet Nougaret"
 
-[node name="ArticleSkills" parent="Margin/Body/Left/Content" instance=ExtResource( 2 )]
-margin_top = 152.0
-margin_right = 338.0
-margin_bottom = 564.0
+[node name="H3" parent="GDEVversion/Body/Left/Name" instance=ExtResource( 1 )]
+margin_top = 53.0
+margin_right = 366.0
+margin_bottom = 81.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+
+[node name="CenterContainer" type="CenterContainer" parent="GDEVversion/Body/Left"]
+margin_left = 25.0
+margin_top = 25.0
+margin_right = 391.0
+margin_bottom = 1599.0
+
+[node name="Content" type="VBoxContainer" parent="GDEVversion/Body/Left/CenterContainer"]
+margin_left = 13.0
+margin_top = 199.0
+margin_right = 352.0
+margin_bottom = 1374.0
+custom_constants/separation = 35
+
+[node name="ArticleSkills" parent="GDEVversion/Body/Left/CenterContainer/Content" instance=ExtResource( 2 )]
+margin_right = 339.0
+margin_bottom = 291.0
 custom_constants/separation = 20
 
-[node name="Title" parent="Margin/Body/Left/Content/ArticleSkills" instance=ExtResource( 4 )]
-margin_right = 338.0
+[node name="Title" parent="GDEVversion/Body/Left/CenterContainer/Content/ArticleSkills" instance=ExtResource( 4 )]
+margin_right = 339.0
 margin_bottom = 31.0
 text = "Game dev. skills"
 
-[node name="Margin" type="MarginContainer" parent="Margin/Body/Left/Content/ArticleSkills"]
+[node name="Margin" type="MarginContainer" parent="GDEVversion/Body/Left/CenterContainer/Content/ArticleSkills"]
 margin_top = 51.0
-margin_right = 338.0
-margin_bottom = 412.0
+margin_right = 339.0
+margin_bottom = 291.0
+custom_constants/margin_right = 15
 
-[node name="Skills" type="VBoxContainer" parent="Margin/Body/Left/Content/ArticleSkills/Margin"]
-margin_right = 338.0
-margin_bottom = 361.0
+[node name="Skills" type="VBoxContainer" parent="GDEVversion/Body/Left/CenterContainer/Content/ArticleSkills/Margin"]
+margin_right = 324.0
+margin_bottom = 240.0
 custom_constants/separation = 12
 
-[node name="Skill5" parent="Margin/Body/Left/Content/ArticleSkills/Margin/Skills" instance=ExtResource( 5 )]
-margin_right = 338.0
-margin_bottom = 40.0
-label = "Game logic & architechture"
+[node name="Skill5" parent="GDEVversion/Body/Left/CenterContainer/Content/ArticleSkills/Margin/Skills" instance=ExtResource( 5 )]
+margin_right = 324.0
+margin_bottom = 24.0
+label = "Game logic & architecture"
 progress = 81.0
 
-[node name="Skill9" parent="Margin/Body/Left/Content/ArticleSkills/Margin/Skills" instance=ExtResource( 5 )]
-margin_top = 52.0
-margin_right = 338.0
-margin_bottom = 73.0
-label = "Teamwork"
-progress = 100.0
-
-[node name="Skill2" parent="Margin/Body/Left/Content/ArticleSkills/Margin/Skills" instance=ExtResource( 5 )]
-margin_top = 85.0
-margin_right = 338.0
-margin_bottom = 106.0
-label = "Game design"
-progress = 63.256
-
-[node name="Skill3" parent="Margin/Body/Left/Content/ArticleSkills/Margin/Skills" instance=ExtResource( 5 )]
-margin_top = 118.0
-margin_right = 338.0
-margin_bottom = 158.0
-label = "Project lead & management"
-progress = 77.209
-
-[node name="Skill" parent="Margin/Body/Left/Content/ArticleSkills/Margin/Skills" instance=ExtResource( 5 )]
-margin_top = 170.0
-margin_right = 338.0
-margin_bottom = 210.0
+[node name="Skill" parent="GDEVversion/Body/Left/CenterContainer/Content/ArticleSkills/Margin/Skills" instance=ExtResource( 5 )]
+margin_top = 36.0
+margin_right = 324.0
+margin_bottom = 60.0
 label = "Networking & Backend"
 progress = 91.628
 
-[node name="Skill4" parent="Margin/Body/Left/Content/ArticleSkills/Margin/Skills" instance=ExtResource( 5 )]
-margin_top = 222.0
-margin_right = 338.0
-margin_bottom = 262.0
-label = "Engine & tool programming"
-progress = 69.302
-
-[node name="Skill6" parent="Margin/Body/Left/Content/ArticleSkills/Margin/Skills" instance=ExtResource( 5 )]
-margin_top = 274.0
-margin_right = 338.0
-margin_bottom = 295.0
-label = "3D Technical art"
-progress = 73.954
-
-[node name="Skill7" parent="Margin/Body/Left/Content/ArticleSkills/Margin/Skills" instance=ExtResource( 5 )]
-margin_top = 307.0
-margin_right = 338.0
-margin_bottom = 328.0
-label = "2D Technical art"
-progress = 94.419
-
-[node name="Skill8" parent="Margin/Body/Left/Content/ArticleSkills/Margin/Skills" instance=ExtResource( 5 )]
-margin_top = 340.0
-margin_right = 338.0
-margin_bottom = 361.0
+[node name="Skill8" parent="GDEVversion/Body/Left/CenterContainer/Content/ArticleSkills/Margin/Skills" instance=ExtResource( 5 )]
+margin_top = 72.0
+margin_right = 324.0
+margin_bottom = 96.0
 label = "Unit testing"
 progress = 73.953
 
-[node name="ArticleTools" parent="Margin/Body/Left/Content" instance=ExtResource( 2 )]
-margin_top = 594.0
-margin_right = 338.0
-margin_bottom = 899.0
+[node name="Skill4" parent="GDEVversion/Body/Left/CenterContainer/Content/ArticleSkills/Margin/Skills" instance=ExtResource( 5 )]
+margin_top = 108.0
+margin_right = 324.0
+margin_bottom = 132.0
+label = "Engine & tool programming"
+progress = 69.302
 
-[node name="Title" parent="Margin/Body/Left/Content/ArticleTools" instance=ExtResource( 4 )]
-margin_right = 338.0
+[node name="Skill6" parent="GDEVversion/Body/Left/CenterContainer/Content/ArticleSkills/Margin/Skills" instance=ExtResource( 5 )]
+margin_top = 144.0
+margin_right = 324.0
+margin_bottom = 168.0
+label = "Basic shaders and 2D Technical art"
+progress = 61.067
+
+[node name="Skill9" parent="GDEVversion/Body/Left/CenterContainer/Content/ArticleSkills/Margin/Skills" instance=ExtResource( 5 )]
+margin_top = 180.0
+margin_right = 324.0
+margin_bottom = 204.0
+label = "Teamwork"
+progress = 100.0
+
+[node name="Skill2" parent="GDEVversion/Body/Left/CenterContainer/Content/ArticleSkills/Margin/Skills" instance=ExtResource( 5 )]
+margin_top = 216.0
+margin_right = 324.0
+margin_bottom = 240.0
+label = "Game design & balance"
+progress = 63.256
+
+[node name="ArticleTools" parent="GDEVversion/Body/Left/CenterContainer/Content" instance=ExtResource( 2 )]
+margin_top = 326.0
+margin_right = 339.0
+margin_bottom = 511.0
+
+[node name="Title" parent="GDEVversion/Body/Left/CenterContainer/Content/ArticleTools" instance=ExtResource( 4 )]
+margin_right = 339.0
 margin_bottom = 31.0
-text = "Tools & programming"
+text = "Proficient with"
 
-[node name="Margin" type="MarginContainer" parent="Margin/Body/Left/Content/ArticleTools"]
+[node name="Margin" type="MarginContainer" parent="GDEVversion/Body/Left/CenterContainer/Content/ArticleTools"]
 margin_top = 41.0
-margin_right = 338.0
-margin_bottom = 305.0
+margin_right = 339.0
+margin_bottom = 185.0
+custom_constants/margin_right = 15
 custom_constants/margin_top = 12
 
-[node name="Skills" type="VBoxContainer" parent="Margin/Body/Left/Content/ArticleTools/Margin"]
+[node name="Skills" type="VBoxContainer" parent="GDEVversion/Body/Left/CenterContainer/Content/ArticleTools/Margin"]
 margin_top = 12.0
-margin_right = 338.0
-margin_bottom = 264.0
+margin_right = 324.0
+margin_bottom = 144.0
 custom_constants/separation = 12
 
-[node name="Skill2" parent="Margin/Body/Left/Content/ArticleTools/Margin/Skills" instance=ExtResource( 5 )]
-margin_right = 338.0
+[node name="HBoxContainer" type="HBoxContainer" parent="GDEVversion/Body/Left/CenterContainer/Content/ArticleTools/Margin/Skills"]
+margin_right = 324.0
+margin_bottom = 24.0
+custom_constants/separation = 10
+
+[node name="Skill2" parent="GDEVversion/Body/Left/CenterContainer/Content/ArticleTools/Margin/Skills/HBoxContainer" instance=ExtResource( 5 )]
+margin_right = 157.0
+margin_bottom = 24.0
 label = "Godot Engine "
 progress = 100.0
 
-[node name="Skill" parent="Margin/Body/Left/Content/ArticleTools/Margin/Skills" instance=ExtResource( 5 )]
-margin_top = 33.0
-margin_right = 338.0
-margin_bottom = 54.0
+[node name="Skill" parent="GDEVversion/Body/Left/CenterContainer/Content/ArticleTools/Margin/Skills/HBoxContainer" instance=ExtResource( 5 )]
+margin_left = 167.0
+margin_right = 324.0
+margin_bottom = 24.0
 label = "Unreal Engine 4"
 progress = 61.861
 
-[node name="Skill3" parent="Margin/Body/Left/Content/ArticleTools/Margin/Skills" instance=ExtResource( 5 )]
-margin_top = 66.0
-margin_right = 338.0
-margin_bottom = 87.0
+[node name="HBoxContainer2" type="HBoxContainer" parent="GDEVversion/Body/Left/CenterContainer/Content/ArticleTools/Margin/Skills"]
+margin_top = 36.0
+margin_right = 324.0
+margin_bottom = 60.0
+custom_constants/separation = 10
+
+[node name="Skill7" parent="GDEVversion/Body/Left/CenterContainer/Content/ArticleTools/Margin/Skills/HBoxContainer2" instance=ExtResource( 5 )]
+margin_right = 157.0
+margin_bottom = 24.0
+label = "Node.js & Express"
+progress = 86.512
+
+[node name="Skill6" parent="GDEVversion/Body/Left/CenterContainer/Content/ArticleTools/Margin/Skills/HBoxContainer2" instance=ExtResource( 5 )]
+margin_left = 167.0
+margin_right = 324.0
+margin_bottom = 24.0
+label = "MongoDB & SQL"
+progress = 86.047
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="GDEVversion/Body/Left/CenterContainer/Content/ArticleTools/Margin/Skills"]
+margin_top = 72.0
+margin_right = 324.0
+margin_bottom = 96.0
+custom_constants/separation = 10
+
+[node name="Skill3" parent="GDEVversion/Body/Left/CenterContainer/Content/ArticleTools/Margin/Skills/HBoxContainer3" instance=ExtResource( 5 )]
+margin_right = 157.0
+margin_bottom = 24.0
 label = "C & C++"
 progress = 74.419
 
-[node name="Skill4" parent="Margin/Body/Left/Content/ArticleTools/Margin/Skills" instance=ExtResource( 5 )]
-margin_top = 99.0
-margin_right = 338.0
-margin_bottom = 120.0
-label = "Web & React.js"
-progress = 86.512
-
-[node name="Skill7" parent="Margin/Body/Left/Content/ArticleTools/Margin/Skills" instance=ExtResource( 5 )]
-margin_top = 132.0
-margin_right = 338.0
-margin_bottom = 153.0
-label = "APIs & Node.js"
-progress = 86.512
-
-[node name="Skill5" parent="Margin/Body/Left/Content/ArticleTools/Margin/Skills" instance=ExtResource( 5 )]
-margin_top = 165.0
-margin_right = 338.0
-margin_bottom = 186.0
-label = "Python"
-progress = 100.0
-
-[node name="Skill8" parent="Margin/Body/Left/Content/ArticleTools/Margin/Skills" instance=ExtResource( 5 )]
-margin_top = 198.0
-margin_right = 338.0
-margin_bottom = 219.0
+[node name="Skill8" parent="GDEVversion/Body/Left/CenterContainer/Content/ArticleTools/Margin/Skills/HBoxContainer3" instance=ExtResource( 5 )]
+margin_left = 167.0
+margin_right = 324.0
+margin_bottom = 24.0
 label = "Java & Kotlin"
 progress = 74.884
 
-[node name="Skill6" parent="Margin/Body/Left/Content/ArticleTools/Margin/Skills" instance=ExtResource( 5 )]
-margin_top = 231.0
-margin_right = 338.0
-margin_bottom = 252.0
-label = "Git "
-progress = 86.047
+[node name="HBoxContainer4" type="HBoxContainer" parent="GDEVversion/Body/Left/CenterContainer/Content/ArticleTools/Margin/Skills"]
+margin_top = 108.0
+margin_right = 324.0
+margin_bottom = 132.0
+custom_constants/separation = 10
 
-[node name="ArticleStats" parent="Margin/Body/Left/Content" instance=ExtResource( 2 )]
-margin_top = 929.0
-margin_right = 338.0
-margin_bottom = 1102.0
+[node name="Skill5" parent="GDEVversion/Body/Left/CenterContainer/Content/ArticleTools/Margin/Skills/HBoxContainer4" instance=ExtResource( 5 )]
+margin_right = 157.0
+margin_bottom = 24.0
+label = "Python"
+progress = 100.0
 
-[node name="Title" parent="Margin/Body/Left/Content/ArticleStats" instance=ExtResource( 4 )]
-margin_right = 338.0
+[node name="Skill6" parent="GDEVversion/Body/Left/CenterContainer/Content/ArticleTools/Margin/Skills/HBoxContainer4" instance=ExtResource( 5 )]
+margin_left = 167.0
+margin_right = 324.0
+margin_bottom = 24.0
+label = "Git & Github"
+progress = 100.0
+
+[node name="ArticleStats" parent="GDEVversion/Body/Left/CenterContainer/Content" instance=ExtResource( 2 )]
+margin_top = 546.0
+margin_right = 339.0
+margin_bottom = 775.0
+
+[node name="Title" parent="GDEVversion/Body/Left/CenterContainer/Content/ArticleStats" instance=ExtResource( 4 )]
+margin_right = 339.0
 margin_bottom = 31.0
 text = "Achievements"
 
-[node name="Margin" type="MarginContainer" parent="Margin/Body/Left/Content/ArticleStats"]
+[node name="Margin" type="MarginContainer" parent="GDEVversion/Body/Left/CenterContainer/Content/ArticleStats"]
 margin_top = 41.0
-margin_right = 338.0
-margin_bottom = 173.0
+margin_right = 339.0
+margin_bottom = 229.0
+custom_constants/margin_right = 15
 custom_constants/margin_top = 12
 
-[node name="Achievements" type="VBoxContainer" parent="Margin/Body/Left/Content/ArticleStats/Margin"]
+[node name="Achievements" type="VBoxContainer" parent="GDEVversion/Body/Left/CenterContainer/Content/ArticleStats/Margin"]
 margin_top = 12.0
-margin_right = 338.0
-margin_bottom = 132.0
+margin_right = 324.0
+margin_bottom = 188.0
 custom_constants/separation = 12
 
-[node name="Stat2" parent="Margin/Body/Left/Content/ArticleStats/Margin/Achievements" instance=ExtResource( 6 )]
-margin_top = -1.0
-margin_right = 338.0
-margin_bottom = 20.0
+[node name="Stat2" parent="GDEVversion/Body/Left/CenterContainer/Content/ArticleStats/Margin/Achievements" instance=ExtResource( 6 )]
+margin_right = 324.0
+margin_bottom = 24.0
 label = "Years of experience "
 number = 4.5
 
-[node name="Stat3" parent="Margin/Body/Left/Content/ArticleStats/Margin/Achievements" instance=ExtResource( 6 )]
-margin_top = 32.0
-margin_right = 338.0
-margin_bottom = 53.0
+[node name="Stat3" parent="GDEVversion/Body/Left/CenterContainer/Content/ArticleStats/Margin/Achievements" instance=ExtResource( 6 )]
+margin_top = 36.0
+margin_right = 324.0
+margin_bottom = 82.0
 label = "Solo-developed games released"
 number = 4.0
 
-[node name="Stat4" parent="Margin/Body/Left/Content/ArticleStats/Margin/Achievements" instance=ExtResource( 6 )]
-margin_top = 65.0
-margin_right = 338.0
-margin_bottom = 86.0
+[node name="Stat4" parent="GDEVversion/Body/Left/CenterContainer/Content/ArticleStats/Margin/Achievements" instance=ExtResource( 6 )]
+margin_top = 94.0
+margin_right = 324.0
+margin_bottom = 140.0
 label = "Team-developed games released"
 number = 1.0
 
-[node name="Stat" parent="Margin/Body/Left/Content/ArticleStats/Margin/Achievements" instance=ExtResource( 6 )]
-margin_top = 98.0
-margin_right = 338.0
-margin_bottom = 119.0
+[node name="Stat" parent="GDEVversion/Body/Left/CenterContainer/Content/ArticleStats/Margin/Achievements" instance=ExtResource( 6 )]
+margin_top = 152.0
+margin_right = 324.0
+margin_bottom = 176.0
 label = "Gamejam entries released"
 number = 3.0
 
-[node name="ArticlePrizes" parent="Margin/Body/Left/Content" instance=ExtResource( 2 )]
-margin_top = 1132.0
-margin_right = 338.0
-margin_bottom = 1244.0
+[node name="ArticlePrizes" parent="GDEVversion/Body/Left/CenterContainer/Content" instance=ExtResource( 2 )]
+margin_top = 810.0
+margin_right = 339.0
+margin_bottom = 909.0
 
-[node name="Title" parent="Margin/Body/Left/Content/ArticlePrizes" instance=ExtResource( 4 )]
-margin_right = 338.0
+[node name="Title" parent="GDEVversion/Body/Left/CenterContainer/Content/ArticlePrizes" instance=ExtResource( 4 )]
+margin_right = 339.0
 margin_bottom = 31.0
 text = "Prizes & contests"
 
-[node name="Margin" type="MarginContainer" parent="Margin/Body/Left/Content/ArticlePrizes"]
+[node name="Margin" type="MarginContainer" parent="GDEVversion/Body/Left/CenterContainer/Content/ArticlePrizes"]
 margin_top = 41.0
-margin_right = 338.0
-margin_bottom = 112.0
+margin_right = 339.0
+margin_bottom = 99.0
+custom_constants/margin_right = 15
 custom_constants/margin_top = 12
 
-[node name="Lines" type="VBoxContainer" parent="Margin/Body/Left/Content/ArticlePrizes/Margin"]
+[node name="Lines" type="VBoxContainer" parent="GDEVversion/Body/Left/CenterContainer/Content/ArticlePrizes/Margin"]
 margin_top = 12.0
-margin_right = 338.0
-margin_bottom = 71.0
+margin_right = 324.0
+margin_bottom = 58.0
 custom_constants/separation = 12
 
-[node name="Singleline" parent="Margin/Body/Left/Content/ArticlePrizes/Margin/Lines" instance=ExtResource( 7 )]
-margin_right = 338.0
-margin_bottom = 59.0
-label = "GMTK jam 2020, out of 5401 entries:
-- \"Originality\": Top 33
-- \"Presentation\": Top 477"
+[node name="Singleline" parent="GDEVversion/Body/Left/CenterContainer/Content/ArticlePrizes/Margin/Lines" instance=ExtResource( 7 )]
+margin_right = 324.0
+margin_bottom = 46.0
+label = "Top 33 out of 5401 entries in \"originality\" for GMTK game jam 2020."
 
-[node name="ArticleLangs" parent="Margin/Body/Left/Content" instance=ExtResource( 2 )]
-margin_top = 1274.0
-margin_right = 338.0
-margin_bottom = 1414.0
+[node name="ArticleLangs" parent="GDEVversion/Body/Left/CenterContainer/Content" instance=ExtResource( 2 )]
+margin_top = 944.0
+margin_right = 339.0
+margin_bottom = 1021.0
 
-[node name="Title" parent="Margin/Body/Left/Content/ArticleLangs" instance=ExtResource( 4 )]
-margin_right = 338.0
+[node name="Title" parent="GDEVversion/Body/Left/CenterContainer/Content/ArticleLangs" instance=ExtResource( 4 )]
+margin_right = 339.0
 margin_bottom = 31.0
 text = "Languages"
 
-[node name="Margin" type="MarginContainer" parent="Margin/Body/Left/Content/ArticleLangs"]
+[node name="Margin" type="MarginContainer" parent="GDEVversion/Body/Left/CenterContainer/Content/ArticleLangs"]
 margin_top = 41.0
-margin_right = 338.0
-margin_bottom = 140.0
+margin_right = 339.0
+margin_bottom = 77.0
+custom_constants/margin_right = 15
 custom_constants/margin_top = 12
 
-[node name="Skills" type="VBoxContainer" parent="Margin/Body/Left/Content/ArticleLangs/Margin"]
+[node name="Skills" type="HBoxContainer" parent="GDEVversion/Body/Left/CenterContainer/Content/ArticleLangs/Margin"]
 margin_top = 12.0
-margin_right = 338.0
-margin_bottom = 99.0
+margin_right = 324.0
+margin_bottom = 36.0
 custom_constants/separation = 12
 
-[node name="Skill" parent="Margin/Body/Left/Content/ArticleLangs/Margin/Skills" instance=ExtResource( 5 )]
-margin_right = 338.0
+[node name="Skill2" parent="GDEVversion/Body/Left/CenterContainer/Content/ArticleLangs/Margin/Skills" instance=ExtResource( 5 )]
+margin_right = 100.0
+margin_bottom = 24.0
+label = "French"
+progress = 100.0
+
+[node name="Skill" parent="GDEVversion/Body/Left/CenterContainer/Content/ArticleLangs/Margin/Skills" instance=ExtResource( 5 )]
+margin_left = 112.0
+margin_right = 212.0
+margin_bottom = 24.0
 label = "English"
 progress = 90.51
 
-[node name="Skill2" parent="Margin/Body/Left/Content/ArticleLangs/Margin/Skills" instance=ExtResource( 5 )]
-margin_top = 33.0
-margin_right = 338.0
-margin_bottom = 54.0
-label = "French / Français"
-progress = 100.0
-
-[node name="Skill3" parent="Margin/Body/Left/Content/ArticleLangs/Margin/Skills" instance=ExtResource( 5 )]
-margin_top = 66.0
-margin_right = 338.0
-margin_bottom = 87.0
-label = "Spanish / Español"
+[node name="Skill3" parent="GDEVversion/Body/Left/CenterContainer/Content/ArticleLangs/Margin/Skills" instance=ExtResource( 5 )]
+margin_left = 224.0
+margin_right = 324.0
+margin_bottom = 24.0
+label = "Spanish"
 progress = 72.093
 
-[node name="ArticleContact" parent="Margin/Body/Left/Content" instance=ExtResource( 2 )]
-margin_top = 1444.0
-margin_right = 338.0
-margin_bottom = 1617.0
+[node name="ArticleContact" parent="GDEVversion/Body/Left/CenterContainer/Content" instance=ExtResource( 2 )]
+margin_top = 1056.0
+margin_right = 339.0
+margin_bottom = 1263.0
 
-[node name="Title" parent="Margin/Body/Left/Content/ArticleContact" instance=ExtResource( 4 )]
-margin_right = 338.0
+[node name="Title" parent="GDEVversion/Body/Left/CenterContainer/Content/ArticleContact" instance=ExtResource( 4 )]
+margin_right = 339.0
 margin_bottom = 31.0
 text = "Contact & links"
 
-[node name="Margin" type="MarginContainer" parent="Margin/Body/Left/Content/ArticleContact"]
+[node name="Margin" type="MarginContainer" parent="GDEVversion/Body/Left/CenterContainer/Content/ArticleContact"]
 margin_top = 41.0
-margin_right = 338.0
-margin_bottom = 173.0
+margin_right = 339.0
+margin_bottom = 207.0
+custom_constants/margin_right = 15
 custom_constants/margin_top = 12
 
-[node name="Lines" type="VBoxContainer" parent="Margin/Body/Left/Content/ArticleContact/Margin"]
+[node name="Lines" type="VBoxContainer" parent="GDEVversion/Body/Left/CenterContainer/Content/ArticleContact/Margin"]
 margin_top = 12.0
-margin_right = 338.0
-margin_bottom = 132.0
+margin_right = 324.0
+margin_bottom = 166.0
 custom_constants/separation = 12
 
-[node name="Singleline" parent="Margin/Body/Left/Content/ArticleContact/Margin/Lines" instance=ExtResource( 7 )]
-margin_right = 338.0
-margin_bottom = 21.0
+[node name="Singleline" parent="GDEVversion/Body/Left/CenterContainer/Content/ArticleContact/Margin/Lines" instance=ExtResource( 7 )]
+margin_right = 324.0
+margin_bottom = 24.0
 label = "Email: anicet.nougaret@zohomail.eu"
 
-[node name="Singleline2" parent="Margin/Body/Left/Content/ArticleContact/Margin/Lines" instance=ExtResource( 7 )]
-margin_top = 33.0
-margin_right = 338.0
-margin_bottom = 54.0
+[node name="Singleline2" parent="GDEVversion/Body/Left/CenterContainer/Content/ArticleContact/Margin/Lines" instance=ExtResource( 7 )]
+margin_top = 36.0
+margin_right = 324.0
+margin_bottom = 60.0
 label = "Phone: +33783970255"
 
-[node name="Singleline3" parent="Margin/Body/Left/Content/ArticleContact/Margin/Lines" instance=ExtResource( 7 )]
-margin_top = 66.0
-margin_right = 338.0
-margin_bottom = 87.0
+[node name="Singleline3" parent="GDEVversion/Body/Left/CenterContainer/Content/ArticleContact/Margin/Lines" instance=ExtResource( 7 )]
+margin_top = 72.0
+margin_right = 324.0
+margin_bottom = 96.0
 label = "Github: /AnicetNgrt"
 
-[node name="Singleline4" parent="Margin/Body/Left/Content/ArticleContact/Margin/Lines" instance=ExtResource( 7 )]
-margin_top = 99.0
-margin_right = 338.0
-margin_bottom = 120.0
+[node name="Singleline4" parent="GDEVversion/Body/Left/CenterContainer/Content/ArticleContact/Margin/Lines" instance=ExtResource( 7 )]
+margin_top = 108.0
+margin_right = 324.0
+margin_bottom = 154.0
 label = "Linkedin:  /in/anicet-nougaret-b7846b174/"
 
-[node name="Separator" type="MarginContainer" parent="Margin/Body"]
-margin_left = 357.0
-margin_right = 391.0
-margin_bottom = 1652.0
+[node name="Separator" parent="GDEVversion/Body" instance=ExtResource( 12 )]
+
+[node name="SharedPart" parent="GDEVversion/Body" instance=ExtResource( 11 )]
+
+[node name="PROGversion" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.45001
+margin_top = 0.999969
+margin_right = 1.44995
+margin_bottom = 1.0
 custom_constants/margin_right = 15
 custom_constants/margin_top = 15
 custom_constants/margin_left = 15
-custom_constants/margin_bottom = 35
+custom_constants/margin_bottom = 25
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="ColorRect" type="ColorRect" parent="Margin/Body/Separator"]
+[node name="Body" type="HBoxContainer" parent="PROGversion"]
 margin_left = 15.0
 margin_top = 15.0
-margin_right = 19.0
-margin_bottom = 1617.0
-rect_min_size = Vector2( 4, 0 )
-color = Color( 0.164706, 0.2, 0.235294, 1 )
+margin_right = 1143.0
+margin_bottom = 1614.0
 
-[node name="Right" type="MarginContainer" parent="Margin/Body"]
-margin_left = 395.0
-margin_right = 1127.0
-margin_bottom = 1652.0
+[node name="Left" type="MarginContainer" parent="PROGversion/Body"]
+margin_right = 391.0
+margin_bottom = 1599.0
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 6.2
-custom_constants/margin_right = 25
-custom_constants/margin_top = 20
-custom_constants/margin_bottom = 45
+size_flags_stretch_ratio = 3.5
+custom_constants/margin_right = 15
+custom_constants/margin_top = 25
+custom_constants/margin_left = 37
+custom_constants/margin_bottom = 0
 
-[node name="Content" type="VBoxContainer" parent="Margin/Body/Right"]
-margin_top = 20.0
-margin_right = 707.0
-margin_bottom = 1607.0
-custom_constants/separation = 40
+[node name="Content" type="VBoxContainer" parent="PROGversion/Body/Left"]
+margin_left = 37.0
+margin_top = 25.0
+margin_right = 376.0
+margin_bottom = 1599.0
+custom_constants/separation = 60
 
-[node name="Article" parent="Margin/Body/Right/Content" instance=ExtResource( 2 )]
-margin_right = 707.0
-margin_bottom = 189.0
+[node name="Name" parent="PROGversion/Body/Left/Content" instance=ExtResource( 2 )]
+margin_right = 339.0
+margin_bottom = 109.0
 
-[node name="Margin" type="MarginContainer" parent="Margin/Body/Right/Content/Article"]
-margin_right = 707.0
-margin_bottom = 189.0
-
-[node name="Label" parent="Margin/Body/Right/Content/Article/Margin" instance=ExtResource( 8 )]
-margin_top = 0.0
-margin_right = 707.0
-margin_bottom = 189.0
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 1, 0.952941, 0.792157, 1 )
-custom_constants/line_spacing = 0
-text = "Passionate 2nd year IT student from France, who is also a game programmer since age 14. I have 4+ years experience making indie games, either alone or in a team. 
-I'm also an experienced web front-end and server back-end programmer who has experience working on databases, login systems, multiplayer game servers, Restful APIs, and even moderation tools for community managers.
-I'm eager to join on an ambitious IT project and company for a 10 weeks internship starting in April 2021. 
-I'm passionate to learn, improve in my field, and contribute the best I can to either front-end or back-end projects."
-align = 0
-
-[node name="Article2" parent="Margin/Body/Right/Content" instance=ExtResource( 2 )]
-margin_top = 229.0
-margin_right = 707.0
-margin_bottom = 1041.0
-custom_constants/separation = 25
-
-[node name="H1" parent="Margin/Body/Right/Content/Article2" instance=ExtResource( 3 )]
-margin_right = 707.0
+[node name="H1" parent="PROGversion/Body/Left/Content/Name" instance=ExtResource( 3 )]
+margin_right = 339.0
 margin_bottom = 43.0
-custom_colors/font_color = Color( 0.701961, 0.313726, 0.243137, 1 )
-text = "Best projects"
+custom_colors/font_color = Color( 0.501961, 0.6, 0.639216, 1 )
+text = "Anicet Nougaret"
 
-[node name="Project2" type="MarginContainer" parent="Margin/Body/Right/Content/Article2"]
-margin_top = 68.0
-margin_right = 707.0
-margin_bottom = 438.0
-custom_constants/margin_left = 10
+[node name="H3" parent="PROGversion/Body/Left/Content/Name" instance=ExtResource( 1 )]
+margin_top = 53.0
+margin_right = 339.0
+margin_bottom = 109.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Front-end & back-end programmer"
 
-[node name="ProjectContent" type="VBoxContainer" parent="Margin/Body/Right/Content/Article2/Project2"]
-margin_left = 10.0
-margin_right = 707.0
-margin_bottom = 370.0
-custom_constants/separation = 17
+[node name="ArticleSkills" parent="PROGversion/Body/Left/Content" instance=ExtResource( 2 )]
+margin_top = 169.0
+margin_right = 339.0
+margin_bottom = 424.0
+custom_constants/separation = 20
 
-[node name="Meta" type="VBoxContainer" parent="Margin/Body/Right/Content/Article2/Project2/ProjectContent"]
-margin_right = 697.0
-margin_bottom = 51.0
+[node name="Title" parent="PROGversion/Body/Left/Content/ArticleSkills" instance=ExtResource( 4 )]
+margin_right = 339.0
+margin_bottom = 31.0
+text = "Skills"
 
-[node name="Label" parent="Margin/Body/Right/Content/Article2/Project2/ProjectContent/Meta" instance=ExtResource( 8 )]
-margin_top = 0.0
-margin_right = 697.0
-margin_bottom = 21.0
-custom_colors/font_color = Color( 0.701961, 0.313726, 0.243137, 1 )
-custom_constants/line_spacing = 0
-text = "June 2019 -> Now  -  Solo-developed"
-align = 0
+[node name="Margin" type="MarginContainer" parent="PROGversion/Body/Left/Content/ArticleSkills"]
+margin_top = 51.0
+margin_right = 339.0
+margin_bottom = 255.0
+custom_constants/margin_right = 15
 
-[node name="H3" parent="Margin/Body/Right/Content/Article2/Project2/ProjectContent/Meta" instance=ExtResource( 1 )]
-margin_top = 25.0
-margin_right = 697.0
-margin_bottom = 51.0
-custom_colors/font_color = Color( 0.243137, 0.701961, 0.454902, 1 )
-text = "\"Zugzwang/Patherns\": Online strategy game"
+[node name="Skills" type="VBoxContainer" parent="PROGversion/Body/Left/Content/ArticleSkills/Margin"]
+margin_right = 324.0
+margin_bottom = 204.0
+custom_constants/separation = 12
 
-[node name="ProjectDesc" type="MarginContainer" parent="Margin/Body/Right/Content/Article2/Project2/ProjectContent"]
-margin_top = 68.0
-margin_right = 697.0
-margin_bottom = 370.0
-custom_constants/margin_left = 35
+[node name="Skill2" parent="PROGversion/Body/Left/Content/ArticleSkills/Margin/Skills" instance=ExtResource( 5 )]
+margin_right = 324.0
+margin_bottom = 24.0
+label = "GUI development & design"
+progress = 63.256
 
-[node name="Paragraphs" type="VBoxContainer" parent="Margin/Body/Right/Content/Article2/Project2/ProjectContent/ProjectDesc"]
-margin_left = 35.0
-margin_right = 697.0
-margin_bottom = 302.0
+[node name="Skill" parent="PROGversion/Body/Left/Content/ArticleSkills/Margin/Skills" instance=ExtResource( 5 )]
+margin_top = 36.0
+margin_right = 324.0
+margin_bottom = 60.0
+label = "Networking & Restful APIs"
+progress = 91.628
 
-[node name="Label2" parent="Margin/Body/Right/Content/Article2/Project2/ProjectContent/ProjectDesc/Paragraphs" instance=ExtResource( 8 )]
-margin_top = 0.0
-margin_right = 662.0
-margin_bottom = 147.0
-custom_colors/font_color = Color( 1, 0.952941, 0.792157, 1 )
-custom_constants/line_spacing = 0
-text = "My 5th game, but this time made with commercial goals in mind. 
-My toughest project so far, still not out of pre-production by any means. 
-Made a paper prototype for it and played it with many people.
-Tried building it 8 times already with many different tools and languages.
-Made 2 singleplayer prototypes for now, one with React, the other with Godot Engine.
-Implemented and tried many systems for online play and user profile handling.
-"
-align = 0
+[node name="Skill4" parent="PROGversion/Body/Left/Content/ArticleSkills/Margin/Skills" instance=ExtResource( 5 )]
+margin_top = 72.0
+margin_right = 324.0
+margin_bottom = 96.0
+label = "Tool software creation"
+progress = 69.302
 
-[node name="Lists" type="HBoxContainer" parent="Margin/Body/Right/Content/Article2/Project2/ProjectContent/ProjectDesc/Paragraphs"]
-margin_top = 151.0
-margin_right = 662.0
-margin_bottom = 302.0
+[node name="Skill6" parent="PROGversion/Body/Left/Content/ArticleSkills/Margin/Skills" instance=ExtResource( 5 )]
+margin_top = 108.0
+margin_right = 324.0
+margin_bottom = 132.0
+label = "Procedural data generation"
+progress = 73.954
 
-[node name="List1" type="VBoxContainer" parent="Margin/Body/Right/Content/Article2/Project2/ProjectContent/ProjectDesc/Paragraphs/Lists"]
-margin_right = 329.0
-margin_bottom = 151.0
-size_flags_horizontal = 3
+[node name="Skill9" parent="PROGversion/Body/Left/Content/ArticleSkills/Margin/Skills" instance=ExtResource( 5 )]
+margin_top = 144.0
+margin_right = 324.0
+margin_bottom = 168.0
+label = "Teamwork"
+progress = 100.0
 
-[node name="Label4" parent="Margin/Body/Right/Content/Article2/Project2/ProjectContent/ProjectDesc/Paragraphs/Lists/List1" instance=ExtResource( 8 )]
-margin_top = 0.0
-margin_right = 329.0
-margin_bottom = 42.0
-custom_colors/font_color = Color( 0.243137, 0.701961, 0.454902, 1 )
-custom_constants/line_spacing = 0
-text = "Some technologies it made me use in advanced ways: "
-align = 0
+[node name="Skill8" parent="PROGversion/Body/Left/Content/ArticleSkills/Margin/Skills" instance=ExtResource( 5 )]
+margin_top = 180.0
+margin_right = 324.0
+margin_bottom = 204.0
+label = "Unit testing"
+progress = 73.953
 
-[node name="Label3" parent="Margin/Body/Right/Content/Article2/Project2/ProjectContent/ProjectDesc/Paragraphs/Lists/List1" instance=ExtResource( 8 )]
-margin_top = 46.0
-margin_right = 329.0
-margin_bottom = 151.0
-custom_colors/font_color = Color( 1, 0.952941, 0.792157, 1 )
-custom_constants/line_spacing = 0
-text = "- React.js, Electron and Typescript
-- MongoDB and Mongoose
-- Express and node.js
-- Godot Engine
-- Java"
-align = 0
+[node name="ArticleTools" parent="PROGversion/Body/Left/Content" instance=ExtResource( 2 )]
+margin_top = 484.0
+margin_right = 339.0
+margin_bottom = 669.0
 
-[node name="List2" type="VBoxContainer" parent="Margin/Body/Right/Content/Article2/Project2/ProjectContent/ProjectDesc/Paragraphs/Lists"]
-margin_left = 333.0
-margin_right = 662.0
-margin_bottom = 151.0
-size_flags_horizontal = 3
+[node name="Title" parent="PROGversion/Body/Left/Content/ArticleTools" instance=ExtResource( 4 )]
+margin_right = 339.0
+margin_bottom = 31.0
+text = "Proficient with"
 
-[node name="Label6" parent="Margin/Body/Right/Content/Article2/Project2/ProjectContent/ProjectDesc/Paragraphs/Lists/List2" instance=ExtResource( 8 )]
-margin_top = 0.0
-margin_right = 329.0
-margin_bottom = 42.0
-custom_colors/font_color = Color( 0.243137, 0.701961, 0.454902, 1 )
-custom_constants/line_spacing = 0
-text = "Some programming patterns it made me learn and try:"
-align = 0
+[node name="Margin" type="MarginContainer" parent="PROGversion/Body/Left/Content/ArticleTools"]
+margin_top = 41.0
+margin_right = 339.0
+margin_bottom = 185.0
+custom_constants/margin_right = 15
+custom_constants/margin_top = 12
 
-[node name="Label5" parent="Margin/Body/Right/Content/Article2/Project2/ProjectContent/ProjectDesc/Paragraphs/Lists/List2" instance=ExtResource( 8 )]
-margin_top = 46.0
-margin_right = 329.0
-margin_bottom = 151.0
-custom_colors/font_color = Color( 1, 0.952941, 0.792157, 1 )
-custom_constants/line_spacing = 0
-text = "- Singleton: mixed results
-- Flyweight: satisfying results
-- Observer: satisfying results
-- Event queue: satisfying results
-- Command: amazing results"
-align = 0
+[node name="Skills" type="VBoxContainer" parent="PROGversion/Body/Left/Content/ArticleTools/Margin"]
+margin_top = 12.0
+margin_right = 324.0
+margin_bottom = 144.0
+custom_constants/separation = 12
 
-[node name="Project3" type="MarginContainer" parent="Margin/Body/Right/Content/Article2"]
-margin_top = 463.0
-margin_right = 707.0
-margin_bottom = 812.0
-custom_constants/margin_left = 10
+[node name="HBoxContainer4" type="HBoxContainer" parent="PROGversion/Body/Left/Content/ArticleTools/Margin/Skills"]
+margin_right = 324.0
+margin_bottom = 24.0
+custom_constants/separation = 10
 
-[node name="ProjectContent" type="VBoxContainer" parent="Margin/Body/Right/Content/Article2/Project3"]
-margin_left = 10.0
-margin_right = 707.0
-margin_bottom = 349.0
-custom_constants/separation = 17
+[node name="Skill5" parent="PROGversion/Body/Left/Content/ArticleTools/Margin/Skills/HBoxContainer4" instance=ExtResource( 5 )]
+margin_right = 157.0
+margin_bottom = 24.0
+label = "Python"
+progress = 100.0
 
-[node name="Meta" type="VBoxContainer" parent="Margin/Body/Right/Content/Article2/Project3/ProjectContent"]
-margin_right = 697.0
-margin_bottom = 51.0
+[node name="Skill6" parent="PROGversion/Body/Left/Content/ArticleTools/Margin/Skills/HBoxContainer4" instance=ExtResource( 5 )]
+margin_left = 167.0
+margin_right = 324.0
+margin_bottom = 24.0
+label = "Git & Github"
+progress = 100.0
 
-[node name="Label" parent="Margin/Body/Right/Content/Article2/Project3/ProjectContent/Meta" instance=ExtResource( 8 )]
-margin_top = 0.0
-margin_right = 697.0
-margin_bottom = 21.0
-custom_colors/font_color = Color( 0.701961, 0.313726, 0.243137, 1 )
-custom_constants/line_spacing = 0
-text = "August 2019 -> February 2020  -  Solo-developed"
-align = 0
+[node name="HBoxContainer2" type="HBoxContainer" parent="PROGversion/Body/Left/Content/ArticleTools/Margin/Skills"]
+margin_top = 36.0
+margin_right = 324.0
+margin_bottom = 60.0
+custom_constants/separation = 10
 
-[node name="H3" parent="Margin/Body/Right/Content/Article2/Project3/ProjectContent/Meta" instance=ExtResource( 1 )]
-margin_top = 25.0
-margin_right = 697.0
-margin_bottom = 51.0
-custom_colors/font_color = Color( 0.243137, 0.701961, 0.454902, 1 )
-text = "\"Flore1\": Python Graphics Library / Game Engine"
+[node name="Skill7" parent="PROGversion/Body/Left/Content/ArticleTools/Margin/Skills/HBoxContainer2" instance=ExtResource( 5 )]
+margin_right = 157.0
+margin_bottom = 24.0
+label = "Node.js & Express"
+progress = 86.512
 
-[node name="ProjectDesc" type="MarginContainer" parent="Margin/Body/Right/Content/Article2/Project3/ProjectContent"]
-margin_top = 68.0
-margin_right = 697.0
-margin_bottom = 349.0
-custom_constants/margin_left = 35
+[node name="Skill6" parent="PROGversion/Body/Left/Content/ArticleTools/Margin/Skills/HBoxContainer2" instance=ExtResource( 5 )]
+margin_left = 167.0
+margin_right = 324.0
+margin_bottom = 24.0
+label = "MongoDB & SQL"
+progress = 86.047
 
-[node name="Paragraphs" type="VBoxContainer" parent="Margin/Body/Right/Content/Article2/Project3/ProjectContent/ProjectDesc"]
-margin_left = 35.0
-margin_right = 697.0
-margin_bottom = 281.0
+[node name="HBoxContainer3" type="HBoxContainer" parent="PROGversion/Body/Left/Content/ArticleTools/Margin/Skills"]
+margin_top = 72.0
+margin_right = 324.0
+margin_bottom = 96.0
+custom_constants/separation = 10
 
-[node name="Label2" parent="Margin/Body/Right/Content/Article2/Project3/ProjectContent/ProjectDesc/Paragraphs" instance=ExtResource( 8 )]
-margin_top = 0.0
-margin_right = 662.0
-margin_bottom = 105.0
-custom_colors/font_color = Color( 1, 0.952941, 0.792157, 1 )
-custom_constants/line_spacing = 0
-text = "Ambitious Python 2D layer-based game engine rendering in the terminal. 1 pixel being rendered as two coloured space characters.
-I even did an ANSI-art painting and frame-by-frame animating software called \"Flore1-Paint\" with my library.
-"
-align = 0
+[node name="Skill3" parent="PROGversion/Body/Left/Content/ArticleTools/Margin/Skills/HBoxContainer3" instance=ExtResource( 5 )]
+margin_right = 157.0
+margin_bottom = 24.0
+label = "C & C++"
+progress = 74.419
 
-[node name="Label4" parent="Margin/Body/Right/Content/Article2/Project3/ProjectContent/ProjectDesc/Paragraphs" instance=ExtResource( 8 )]
-margin_top = 109.0
-margin_right = 662.0
-margin_bottom = 130.0
-custom_colors/font_color = Color( 0.243137, 0.701961, 0.454902, 1 )
-custom_constants/line_spacing = 0
-text = "Implemented systems:"
-align = 0
+[node name="Skill8" parent="PROGversion/Body/Left/Content/ArticleTools/Margin/Skills/HBoxContainer3" instance=ExtResource( 5 )]
+margin_left = 167.0
+margin_right = 324.0
+margin_bottom = 24.0
+label = "Java & Kotlin"
+progress = 74.884
 
-[node name="Label3" parent="Margin/Body/Right/Content/Article2/Project3/ProjectContent/ProjectDesc/Paragraphs" instance=ExtResource( 8 )]
-margin_top = 134.0
-margin_right = 662.0
-margin_bottom = 281.0
-custom_colors/font_color = Color( 1, 0.952941, 0.792157, 1 )
-custom_constants/line_spacing = 0
-text = "- 30+fps multi-layer buffered 2D rendering
-- Files and assets management
-- .png files rendering
-- Inputs handling
-- Animation players
-- Functional programming style coroutines
-- FPS and speed stabilization"
-align = 0
+[node name="HBoxContainer" type="HBoxContainer" parent="PROGversion/Body/Left/Content/ArticleTools/Margin/Skills"]
+margin_top = 108.0
+margin_right = 324.0
+margin_bottom = 132.0
+custom_constants/separation = 10
 
-[node name="Article3" parent="Margin/Body/Right/Content" instance=ExtResource( 2 )]
-margin_top = 1081.0
-margin_right = 707.0
-margin_bottom = 1566.0
-custom_constants/separation = 25
+[node name="Skill2" parent="PROGversion/Body/Left/Content/ArticleTools/Margin/Skills/HBoxContainer" instance=ExtResource( 5 )]
+margin_right = 157.0
+margin_bottom = 24.0
+label = "Godot Engine "
+progress = 100.0
 
-[node name="H1" parent="Margin/Body/Right/Content/Article3" instance=ExtResource( 3 )]
-margin_right = 707.0
-margin_bottom = 43.0
-custom_colors/font_color = Color( 0.701961, 0.313726, 0.243137, 1 )
-text = "Education"
+[node name="Skill" parent="PROGversion/Body/Left/Content/ArticleTools/Margin/Skills/HBoxContainer" instance=ExtResource( 5 )]
+margin_left = 167.0
+margin_right = 324.0
+margin_bottom = 24.0
+label = "Unreal Engine 4"
+progress = 61.861
 
-[node name="Education" type="MarginContainer" parent="Margin/Body/Right/Content/Article3"]
-margin_top = 68.0
-margin_right = 707.0
-margin_bottom = 157.0
-custom_constants/margin_left = 10
+[node name="ArticleStats" parent="PROGversion/Body/Left/Content" instance=ExtResource( 2 )]
+margin_top = 729.0
+margin_right = 339.0
+margin_bottom = 914.0
 
-[node name="EducationContent" type="VBoxContainer" parent="Margin/Body/Right/Content/Article3/Education"]
-margin_left = 10.0
-margin_right = 707.0
-margin_bottom = 89.0
-custom_constants/separation = 17
+[node name="Title" parent="PROGversion/Body/Left/Content/ArticleStats" instance=ExtResource( 4 )]
+margin_right = 339.0
+margin_bottom = 31.0
+text = "Achievements"
 
-[node name="Meta" type="VBoxContainer" parent="Margin/Body/Right/Content/Article3/Education/EducationContent"]
-margin_right = 697.0
-margin_bottom = 51.0
+[node name="Margin" type="MarginContainer" parent="PROGversion/Body/Left/Content/ArticleStats"]
+margin_top = 41.0
+margin_right = 339.0
+margin_bottom = 185.0
+custom_constants/margin_right = 15
+custom_constants/margin_top = 12
 
-[node name="Label" parent="Margin/Body/Right/Content/Article3/Education/EducationContent/Meta" instance=ExtResource( 8 )]
-margin_top = 0.0
-margin_right = 697.0
-margin_bottom = 21.0
-custom_colors/font_color = Color( 0.701961, 0.313726, 0.243137, 1 )
-custom_constants/line_spacing = 0
-text = "July 2019"
-align = 0
+[node name="Achievements" type="VBoxContainer" parent="PROGversion/Body/Left/Content/ArticleStats/Margin"]
+margin_top = 12.0
+margin_right = 324.0
+margin_bottom = 144.0
+custom_constants/separation = 12
 
-[node name="H3" parent="Margin/Body/Right/Content/Article3/Education/EducationContent/Meta" instance=ExtResource( 1 )]
-margin_top = 25.0
-margin_right = 697.0
-margin_bottom = 51.0
-custom_colors/font_color = Color( 0.243137, 0.701961, 0.454902, 1 )
-text = "French Scientific \"Baccalauréat\" with honors"
+[node name="Stat2" parent="PROGversion/Body/Left/Content/ArticleStats/Margin/Achievements" instance=ExtResource( 6 )]
+margin_right = 324.0
+margin_bottom = 24.0
+label = "Years of experience "
+number = 4.5
 
-[node name="ProjectDesc" type="MarginContainer" parent="Margin/Body/Right/Content/Article3/Education/EducationContent"]
-margin_top = 68.0
-margin_right = 697.0
-margin_bottom = 89.0
-custom_constants/margin_left = 35
+[node name="Stat3" parent="PROGversion/Body/Left/Content/ArticleStats/Margin/Achievements" instance=ExtResource( 6 )]
+margin_top = 36.0
+margin_right = 324.0
+margin_bottom = 60.0
+label = "Video games released"
+number = 5.0
 
-[node name="Paragraphs" type="VBoxContainer" parent="Margin/Body/Right/Content/Article3/Education/EducationContent/ProjectDesc"]
-margin_left = 35.0
-margin_right = 697.0
-margin_bottom = 21.0
+[node name="Stat4" parent="PROGversion/Body/Left/Content/ArticleStats/Margin/Achievements" instance=ExtResource( 6 )]
+margin_top = 72.0
+margin_right = 324.0
+margin_bottom = 96.0
+label = "Team projects finished"
+number = 8.0
 
-[node name="Label2" parent="Margin/Body/Right/Content/Article3/Education/EducationContent/ProjectDesc/Paragraphs" instance=ExtResource( 8 )]
-margin_top = 0.0
-margin_right = 662.0
-margin_bottom = 21.0
-custom_colors/font_color = Color( 1, 0.952941, 0.792157, 1 )
-custom_constants/line_spacing = 0
-text = "Best grades were on topics such as: Maths, Physics, Plastic arts, Litterature and English  "
-align = 0
+[node name="Stat" parent="PROGversion/Body/Left/Content/ArticleStats/Margin/Achievements" instance=ExtResource( 6 )]
+margin_top = 108.0
+margin_right = 324.0
+margin_bottom = 132.0
+label = "Websites made"
+number = 3.0
 
-[node name="Education2" type="MarginContainer" parent="Margin/Body/Right/Content/Article3"]
-margin_top = 182.0
-margin_right = 707.0
-margin_bottom = 485.0
-custom_constants/margin_left = 10
+[node name="ArticleLangs" parent="PROGversion/Body/Left/Content" instance=ExtResource( 2 )]
+margin_top = 974.0
+margin_right = 339.0
+margin_bottom = 1051.0
 
-[node name="EducationContent" type="VBoxContainer" parent="Margin/Body/Right/Content/Article3/Education2"]
-margin_left = 10.0
-margin_right = 707.0
-margin_bottom = 303.0
-custom_constants/separation = 17
+[node name="Title" parent="PROGversion/Body/Left/Content/ArticleLangs" instance=ExtResource( 4 )]
+margin_right = 339.0
+margin_bottom = 31.0
+text = "Languages"
 
-[node name="Meta" type="VBoxContainer" parent="Margin/Body/Right/Content/Article3/Education2/EducationContent"]
-margin_right = 697.0
-margin_bottom = 51.0
+[node name="Margin" type="MarginContainer" parent="PROGversion/Body/Left/Content/ArticleLangs"]
+margin_top = 41.0
+margin_right = 339.0
+margin_bottom = 77.0
+custom_constants/margin_right = 15
+custom_constants/margin_top = 12
 
-[node name="Label" parent="Margin/Body/Right/Content/Article3/Education2/EducationContent/Meta" instance=ExtResource( 8 )]
-margin_top = 0.0
-margin_right = 697.0
-margin_bottom = 21.0
-custom_colors/font_color = Color( 0.701961, 0.313726, 0.243137, 1 )
-custom_constants/line_spacing = 0
-text = "September 2019 -> June 2020"
-align = 0
+[node name="Skills" type="HBoxContainer" parent="PROGversion/Body/Left/Content/ArticleLangs/Margin"]
+margin_top = 12.0
+margin_right = 324.0
+margin_bottom = 36.0
+custom_constants/separation = 12
 
-[node name="H3" parent="Margin/Body/Right/Content/Article3/Education2/EducationContent/Meta" instance=ExtResource( 1 )]
-margin_top = 25.0
-margin_right = 697.0
-margin_bottom = 51.0
-custom_colors/font_color = Color( 0.243137, 0.701961, 0.454902, 1 )
-text = "IUT de Paris, First year studying IT"
+[node name="Skill2" parent="PROGversion/Body/Left/Content/ArticleLangs/Margin/Skills" instance=ExtResource( 5 )]
+margin_right = 100.0
+margin_bottom = 24.0
+label = "French"
+progress = 100.0
 
-[node name="ProjectDesc2" type="MarginContainer" parent="Margin/Body/Right/Content/Article3/Education2/EducationContent"]
-margin_top = 68.0
-margin_right = 697.0
-margin_bottom = 303.0
-custom_constants/margin_left = 35
+[node name="Skill" parent="PROGversion/Body/Left/Content/ArticleLangs/Margin/Skills" instance=ExtResource( 5 )]
+margin_left = 112.0
+margin_right = 212.0
+margin_bottom = 24.0
+label = "English"
+progress = 90.51
 
-[node name="Paragraphs" type="VBoxContainer" parent="Margin/Body/Right/Content/Article3/Education2/EducationContent/ProjectDesc2"]
-margin_left = 35.0
-margin_right = 697.0
-margin_bottom = 235.0
+[node name="Skill3" parent="PROGversion/Body/Left/Content/ArticleLangs/Margin/Skills" instance=ExtResource( 5 )]
+margin_left = 224.0
+margin_right = 324.0
+margin_bottom = 24.0
+label = "Spanish"
+progress = 72.093
 
-[node name="Lists2" type="HBoxContainer" parent="Margin/Body/Right/Content/Article3/Education2/EducationContent/ProjectDesc2/Paragraphs"]
-margin_right = 662.0
-margin_bottom = 235.0
+[node name="ArticleContact" parent="PROGversion/Body/Left/Content" instance=ExtResource( 2 )]
+margin_top = 1111.0
+margin_right = 339.0
+margin_bottom = 1318.0
 
-[node name="List1" type="VBoxContainer" parent="Margin/Body/Right/Content/Article3/Education2/EducationContent/ProjectDesc2/Paragraphs/Lists2"]
-margin_right = 329.0
-margin_bottom = 235.0
-size_flags_horizontal = 3
+[node name="Title" parent="PROGversion/Body/Left/Content/ArticleContact" instance=ExtResource( 4 )]
+margin_right = 339.0
+margin_bottom = 31.0
+text = "Contact & links"
 
-[node name="Label4" parent="Margin/Body/Right/Content/Article3/Education2/EducationContent/ProjectDesc2/Paragraphs/Lists2/List1" instance=ExtResource( 8 )]
-margin_top = 0.0
-margin_right = 329.0
-margin_bottom = 21.0
-custom_colors/font_color = Color( 0.243137, 0.701961, 0.454902, 1 )
-custom_constants/line_spacing = 0
-text = "What I've learned:"
-align = 0
+[node name="Margin" type="MarginContainer" parent="PROGversion/Body/Left/Content/ArticleContact"]
+margin_top = 41.0
+margin_right = 339.0
+margin_bottom = 207.0
+custom_constants/margin_right = 15
+custom_constants/margin_top = 12
 
-[node name="Label3" parent="Margin/Body/Right/Content/Article3/Education2/EducationContent/ProjectDesc2/Paragraphs/Lists2/List1" instance=ExtResource( 8 )]
-margin_top = 25.0
-margin_right = 329.0
-margin_bottom = 235.0
-custom_colors/font_color = Color( 1, 0.952941, 0.792157, 1 )
-custom_constants/line_spacing = 0
-text = "- Java Object Oriented Programming
-- Win98 intel x64 ASM programming
-- C and C++
-- SQL databases 
-- UML and programming patterns
-- Networking
-- Teamwork
-- Economics
-- French and European IT laws 
-- Project management."
-align = 0
+[node name="Lines" type="VBoxContainer" parent="PROGversion/Body/Left/Content/ArticleContact/Margin"]
+margin_top = 12.0
+margin_right = 324.0
+margin_bottom = 166.0
+custom_constants/separation = 12
 
-[node name="List2" type="VBoxContainer" parent="Margin/Body/Right/Content/Article3/Education2/EducationContent/ProjectDesc2/Paragraphs/Lists2"]
-margin_left = 333.0
-margin_right = 662.0
-margin_bottom = 235.0
-size_flags_horizontal = 3
+[node name="Singleline" parent="PROGversion/Body/Left/Content/ArticleContact/Margin/Lines" instance=ExtResource( 7 )]
+margin_right = 324.0
+margin_bottom = 24.0
+label = "Email: anicet.nougaret@zohomail.eu"
 
-[node name="Label6" parent="Margin/Body/Right/Content/Article3/Education2/EducationContent/ProjectDesc2/Paragraphs/Lists2/List2" instance=ExtResource( 8 )]
-margin_top = 0.0
-margin_right = 329.0
-margin_bottom = 21.0
-custom_colors/font_color = Color( 0.243137, 0.701961, 0.454902, 1 )
-custom_constants/line_spacing = 0
-text = "Projects carried out in teamwork:"
-align = 0
+[node name="Singleline2" parent="PROGversion/Body/Left/Content/ArticleContact/Margin/Lines" instance=ExtResource( 7 )]
+margin_top = 36.0
+margin_right = 324.0
+margin_bottom = 60.0
+label = "Phone: +33783970255"
 
-[node name="Label5" parent="Margin/Body/Right/Content/Article3/Education2/EducationContent/ProjectDesc2/Paragraphs/Lists2/List2" instance=ExtResource( 8 )]
-margin_top = 25.0
-margin_right = 329.0
-margin_bottom = 214.0
-custom_colors/font_color = Color( 1, 0.952941, 0.792157, 1 )
-custom_constants/line_spacing = 0
-text = "- Offline user registering and profiling service in C
-- Maze solver in C
-- SQL database and GUI creation with Access
-- Research on topic: \"Environmental impact
-of IT and solutions\"
-- TIler game in Java
-- Userbase registration and handling software with vb.NET"
-align = 0
+[node name="Singleline3" parent="PROGversion/Body/Left/Content/ArticleContact/Margin/Lines" instance=ExtResource( 7 )]
+margin_top = 72.0
+margin_right = 324.0
+margin_bottom = 96.0
+label = "Github: /AnicetNgrt"
+
+[node name="Singleline4" parent="PROGversion/Body/Left/Content/ArticleContact/Margin/Lines" instance=ExtResource( 7 )]
+margin_top = 108.0
+margin_right = 324.0
+margin_bottom = 154.0
+label = "Linkedin:  /in/anicet-nougaret-b7846b174/"
+
+[node name="Separator" parent="PROGversion/Body" instance=ExtResource( 12 )]
+
+[node name="SharedPart" parent="PROGversion/Body" instance=ExtResource( 11 )]

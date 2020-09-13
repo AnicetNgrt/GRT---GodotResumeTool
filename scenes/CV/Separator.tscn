@@ -1,0 +1,21 @@
+[gd_scene format=2]
+
+[node name="Separator" type="MarginContainer"]
+margin_left = 395.0
+margin_right = 429.0
+margin_bottom = 1599.0
+custom_constants/margin_right = 15
+custom_constants/margin_top = 15
+custom_constants/margin_left = 15
+custom_constants/margin_bottom = 45
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 15.0
+margin_top = 15.0
+margin_right = 19.0
+margin_bottom = 1554.0
+rect_min_size = Vector2( 4, 0 )
+color = Color( 0.737255, 0.811765, 0.831373, 1 )

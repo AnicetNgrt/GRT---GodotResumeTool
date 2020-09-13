@@ -6,7 +6,8 @@
 [ext_resource path="res://assets/Roboto/Roboto-Italic.ttf" type="DynamicFontData" id=4]
 
 [sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.117647, 0.133333, 0.141176, 1 )
+bg_color = Color( 0.737255, 0.811765, 0.831373, 1 )
+border_color = Color( 1, 1, 1, 0 )
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
@@ -32,25 +33,29 @@ __meta__ = {
 }
 
 [node name="Panel" parent="." instance=ExtResource( 1 )]
+margin_bottom = 24.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 
 [node name="Margin" type="MarginContainer" parent="."]
 margin_right = 231.0
-margin_bottom = 21.0
+margin_bottom = 24.0
 custom_constants/margin_right = 5
 
 [node name="Content" type="HBoxContainer" parent="Margin"]
 margin_right = 226.0
-margin_bottom = 21.0
+margin_bottom = 24.0
 
 [node name="Label" parent="Margin/Content" instance=ExtResource( 2 )]
+margin_top = 0.0
 margin_right = 177.0
+margin_bottom = 24.0
+align = 2
 
 [node name="Margin" type="MarginContainer" parent="Margin/Content"]
 margin_left = 181.0
 margin_right = 226.0
-margin_bottom = 21.0
+margin_bottom = 24.0
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.25
 custom_constants/margin_right = 5
@@ -60,14 +65,11 @@ custom_constants/margin_bottom = 2
 [node name="Panel" type="Panel" parent="Margin/Content/Margin"]
 margin_left = 5.0
 margin_right = 40.0
-margin_bottom = 19.0
+margin_bottom = 22.0
 custom_styles/panel = SubResource( 1 )
 
 [node name="Label" parent="Margin/Content/Margin" instance=ExtResource( 2 )]
 margin_left = 5.0
-margin_top = 0.0
 margin_right = 40.0
-margin_bottom = 19.0
 custom_fonts/font = SubResource( 2 )
 text = "0"
-align = 1
