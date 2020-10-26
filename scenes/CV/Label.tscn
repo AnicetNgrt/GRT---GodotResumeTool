@@ -20,7 +20,6 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = -2
 custom_constants/line_spacing = -2
 custom_constants/shadow_offset_y = 2
-align = 1
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false

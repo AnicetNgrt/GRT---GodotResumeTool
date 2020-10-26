@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://scenes/UI/H3.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/UI/Article.tscn" type="PackedScene" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://scenes/CV/Separator.tscn" type="PackedScene" id=12]
 [ext_resource path="res://scenes/CV/RightImprobableEngineer.tscn" type="PackedScene" id=13]
 [ext_resource path="res://scenes/CV/RightImprobableEngineerFrench.tscn" type="PackedScene" id=14]
+[ext_resource path="res://scenes/CV/RightManzalabIntern.tscn" type="PackedScene" id=15]
 
 [sub_resource type="DynamicFont" id=1]
 size = 20
@@ -69,6 +70,7 @@ margin_right = 2.0
 margin_bottom = -3.0
 custom_fonts/font = SubResource( 1 )
 text = "Ce CV a été réalisé avec des composants d'interfaces que j'ai codé dans un moteur de jeu."
+align = 1
 
 [node name="GDEVversion" type="MarginContainer" parent="."]
 visible = false
@@ -123,9 +125,9 @@ margin_bottom = 1599.0
 
 [node name="Content" type="VBoxContainer" parent="GDEVversion/Body/Left/CenterContainer"]
 margin_left = 13.0
-margin_top = 89.0
+margin_top = 199.0
 margin_right = 352.0
-margin_bottom = 1484.0
+margin_bottom = 1374.0
 custom_constants/separation = 35
 
 [node name="ArticleSkills" parent="GDEVversion/Body/Left/CenterContainer/Content" instance=ExtResource( 2 )]
@@ -146,7 +148,7 @@ custom_constants/margin_right = 15
 
 [node name="Skills" type="VBoxContainer" parent="GDEVversion/Body/Left/CenterContainer/Content/ArticleSkills/Margin"]
 margin_right = 324.0
-margin_bottom = 262.0
+margin_bottom = 240.0
 custom_constants/separation = 12
 
 [node name="Skill5" parent="GDEVversion/Body/Left/CenterContainer/Content/ArticleSkills/Margin/Skills" instance=ExtResource( 5 )]
@@ -315,7 +317,7 @@ custom_constants/margin_top = 12
 [node name="Achievements" type="VBoxContainer" parent="GDEVversion/Body/Left/CenterContainer/Content/ArticleStats/Margin"]
 margin_top = 12.0
 margin_right = 324.0
-margin_bottom = 210.0
+margin_bottom = 188.0
 custom_constants/separation = 12
 
 [node name="Stat2" parent="GDEVversion/Body/Left/CenterContainer/Content/ArticleStats/Margin/Achievements" instance=ExtResource( 6 )]
@@ -365,7 +367,7 @@ custom_constants/margin_top = 12
 [node name="Lines" type="VBoxContainer" parent="GDEVversion/Body/Left/CenterContainer/Content/ArticlePrizes/Margin"]
 margin_top = 12.0
 margin_right = 324.0
-margin_bottom = 80.0
+margin_bottom = 58.0
 custom_constants/separation = 12
 
 [node name="Singleline" parent="GDEVversion/Body/Left/CenterContainer/Content/ArticlePrizes/Margin/Lines" instance=ExtResource( 7 )]
@@ -436,7 +438,7 @@ custom_constants/margin_top = 12
 [node name="Lines" type="VBoxContainer" parent="GDEVversion/Body/Left/CenterContainer/Content/ArticleContact/Margin"]
 margin_top = 12.0
 margin_right = 324.0
-margin_bottom = 232.0
+margin_bottom = 166.0
 custom_constants/separation = 12
 
 [node name="Singleline" parent="GDEVversion/Body/Left/CenterContainer/Content/ArticleContact/Margin/Lines" instance=ExtResource( 7 )]
@@ -703,7 +705,7 @@ custom_constants/margin_top = 12
 [node name="Achievements" type="VBoxContainer" parent="PROGversion/Body/Left/Content/ArticleStats/Margin"]
 margin_top = 12.0
 margin_right = 324.0
-margin_bottom = 188.0
+margin_bottom = 144.0
 custom_constants/separation = 12
 
 [node name="Stat2" parent="PROGversion/Body/Left/Content/ArticleStats/Margin/Achievements" instance=ExtResource( 6 )]
@@ -796,7 +798,7 @@ custom_constants/margin_top = 12
 [node name="Lines" type="VBoxContainer" parent="PROGversion/Body/Left/Content/ArticleContact/Margin"]
 margin_top = 12.0
 margin_right = 324.0
-margin_bottom = 232.0
+margin_bottom = 166.0
 custom_constants/separation = 12
 
 [node name="Singleline" parent="PROGversion/Body/Left/Content/ArticleContact/Margin/Lines" instance=ExtResource( 7 )]
@@ -884,9 +886,9 @@ margin_bottom = 1609.0
 
 [node name="Content" type="VBoxContainer" parent="ImprobableVersion/Body/Left/CenterContainer"]
 margin_left = 13.0
-margin_top = 155.0
+margin_top = 166.0
 margin_right = 352.0
-margin_bottom = 1428.0
+margin_bottom = 1417.0
 custom_constants/separation = 35
 
 [node name="ArticleSkills" parent="ImprobableVersion/Body/Left/CenterContainer/Content" instance=ExtResource( 2 )]
@@ -1250,6 +1252,7 @@ margin_bottom = 1609.0
 margin_bottom = 1609.0
 
 [node name="ImprobableVersionFr" type="MarginContainer" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 1.45001
@@ -1306,9 +1309,9 @@ margin_bottom = 1599.0
 
 [node name="Content" type="VBoxContainer" parent="ImprobableVersionFr/Body/Left/CenterContainer"]
 margin_left = 13.0
-margin_top = 178.0
+margin_top = 200.0
 margin_right = 352.0
-margin_bottom = 1395.0
+margin_bottom = 1373.0
 custom_constants/separation = 35
 
 [node name="ArticleSkills" parent="ImprobableVersionFr/Body/Left/CenterContainer/Content" instance=ExtResource( 2 )]
@@ -1670,5 +1673,410 @@ label = "Github: /AnicetNgrt"
 [node name="Separator" parent="ImprobableVersionFr/Body" instance=ExtResource( 12 )]
 
 [node name="SharedPart" parent="ImprobableVersionFr/Body" instance=ExtResource( 14 )]
+
+[node name="FSversionFr" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.45001
+margin_top = 0.999969
+margin_right = 1.44995
+margin_bottom = 1.0
+custom_constants/margin_right = 15
+custom_constants/margin_top = 15
+custom_constants/margin_left = 15
+custom_constants/margin_bottom = 25
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Body" type="HBoxContainer" parent="FSversionFr"]
+margin_left = 15.0
+margin_top = 15.0
+margin_right = 1143.0
+margin_bottom = 1622.0
+
+[node name="Left" type="MarginContainer" parent="FSversionFr/Body"]
+margin_right = 391.0
+margin_bottom = 1607.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.5
+custom_constants/margin_top = 25
+custom_constants/margin_left = 25
+custom_constants/margin_bottom = 0
+
+[node name="Name" parent="FSversionFr/Body/Left" instance=ExtResource( 2 )]
+margin_left = 25.0
+margin_top = 25.0
+margin_right = 391.0
+margin_bottom = 1607.0
+
+[node name="H1" parent="FSversionFr/Body/Left/Name" instance=ExtResource( 3 )]
+margin_right = 366.0
+margin_bottom = 43.0
+custom_colors/font_color = Color( 0.501961, 0.6, 0.639216, 1 )
+text = "Anicet Nougaret"
+
+[node name="H3" parent="FSversionFr/Body/Left/Name" instance=ExtResource( 1 )]
+margin_top = 53.0
+margin_right = 366.0
+margin_bottom = 81.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Développeur web full stack"
+
+[node name="CenterContainer" type="CenterContainer" parent="FSversionFr/Body/Left"]
+margin_left = 25.0
+margin_top = 25.0
+margin_right = 391.0
+margin_bottom = 1607.0
+
+[node name="Content" type="VBoxContainer" parent="FSversionFr/Body/Left/CenterContainer"]
+margin_left = 13.0
+margin_top = 132.0
+margin_right = 352.0
+margin_bottom = 1449.0
+custom_constants/separation = 55
+
+[node name="ArticleSkills" parent="FSversionFr/Body/Left/CenterContainer/Content" instance=ExtResource( 2 )]
+margin_right = 339.0
+margin_bottom = 291.0
+custom_constants/separation = 20
+
+[node name="Title" parent="FSversionFr/Body/Left/CenterContainer/Content/ArticleSkills" instance=ExtResource( 4 )]
+margin_right = 339.0
+margin_bottom = 31.0
+text = "Compétences"
+
+[node name="Margin" type="MarginContainer" parent="FSversionFr/Body/Left/CenterContainer/Content/ArticleSkills"]
+margin_top = 51.0
+margin_right = 339.0
+margin_bottom = 291.0
+custom_constants/margin_right = 15
+
+[node name="Skills" type="VBoxContainer" parent="FSversionFr/Body/Left/CenterContainer/Content/ArticleSkills/Margin"]
+margin_right = 324.0
+margin_bottom = 240.0
+custom_constants/separation = 12
+
+[node name="Skill5" parent="FSversionFr/Body/Left/CenterContainer/Content/ArticleSkills/Margin/Skills" instance=ExtResource( 5 )]
+margin_right = 324.0
+margin_bottom = 24.0
+label = "Architechture logicielle"
+progress = 81.0
+
+[node name="Skill6" parent="FSversionFr/Body/Left/CenterContainer/Content/ArticleSkills/Margin/Skills" instance=ExtResource( 5 )]
+margin_top = 36.0
+margin_right = 324.0
+margin_bottom = 60.0
+label = "Frontend et design d'UI"
+progress = 81.0
+
+[node name="Skill" parent="FSversionFr/Body/Left/CenterContainer/Content/ArticleSkills/Margin/Skills" instance=ExtResource( 5 )]
+margin_top = 72.0
+margin_right = 324.0
+margin_bottom = 96.0
+label = "Protocols réseau et Backend"
+progress = 91.628
+
+[node name="Skill7" parent="FSversionFr/Body/Left/CenterContainer/Content/ArticleSkills/Margin/Skills" instance=ExtResource( 5 )]
+margin_top = 108.0
+margin_right = 324.0
+margin_bottom = 132.0
+label = "Programmation asynchrone"
+progress = 69.302
+
+[node name="Skill8" parent="FSversionFr/Body/Left/CenterContainer/Content/ArticleSkills/Margin/Skills" instance=ExtResource( 5 )]
+margin_top = 144.0
+margin_right = 324.0
+margin_bottom = 168.0
+label = "Tests unitaires, rigueur"
+progress = 73.953
+
+[node name="Skill9" parent="FSversionFr/Body/Left/CenterContainer/Content/ArticleSkills/Margin/Skills" instance=ExtResource( 5 )]
+margin_top = 180.0
+margin_right = 324.0
+margin_bottom = 204.0
+label = "Travail d'équipe et communication"
+progress = 100.0
+
+[node name="Skill4" parent="FSversionFr/Body/Left/CenterContainer/Content/ArticleSkills/Margin/Skills" instance=ExtResource( 5 )]
+margin_top = 216.0
+margin_right = 324.0
+margin_bottom = 240.0
+label = "Gestion de projets"
+progress = 69.302
+
+[node name="ArticleTools" parent="FSversionFr/Body/Left/CenterContainer/Content" instance=ExtResource( 2 )]
+margin_top = 346.0
+margin_right = 339.0
+margin_bottom = 531.0
+
+[node name="Title" parent="FSversionFr/Body/Left/CenterContainer/Content/ArticleTools" instance=ExtResource( 4 )]
+margin_right = 339.0
+margin_bottom = 31.0
+text = "Outils et langages"
+
+[node name="Margin" type="MarginContainer" parent="FSversionFr/Body/Left/CenterContainer/Content/ArticleTools"]
+margin_top = 41.0
+margin_right = 339.0
+margin_bottom = 185.0
+custom_constants/margin_right = 15
+custom_constants/margin_top = 12
+
+[node name="Skills" type="VBoxContainer" parent="FSversionFr/Body/Left/CenterContainer/Content/ArticleTools/Margin"]
+margin_top = 12.0
+margin_right = 324.0
+margin_bottom = 144.0
+custom_constants/separation = 12
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="FSversionFr/Body/Left/CenterContainer/Content/ArticleTools/Margin/Skills"]
+margin_right = 324.0
+margin_bottom = 24.0
+custom_constants/separation = 10
+
+[node name="Skill3" parent="FSversionFr/Body/Left/CenterContainer/Content/ArticleTools/Margin/Skills/HBoxContainer3" instance=ExtResource( 5 )]
+margin_right = 157.0
+margin_bottom = 24.0
+label = "PHP Symfony"
+progress = 74.419
+
+[node name="Skill8" parent="FSversionFr/Body/Left/CenterContainer/Content/ArticleTools/Margin/Skills/HBoxContainer3" instance=ExtResource( 5 )]
+margin_left = 167.0
+margin_right = 324.0
+margin_bottom = 24.0
+label = "MERN stack"
+progress = 74.884
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="FSversionFr/Body/Left/CenterContainer/Content/ArticleTools/Margin/Skills"]
+margin_top = 36.0
+margin_right = 324.0
+margin_bottom = 60.0
+custom_constants/separation = 10
+
+[node name="Skill5" parent="FSversionFr/Body/Left/CenterContainer/Content/ArticleTools/Margin/Skills/HBoxContainer4" instance=ExtResource( 5 )]
+margin_right = 157.0
+margin_bottom = 24.0
+label = "Python"
+progress = 100.0
+
+[node name="Skill6" parent="FSversionFr/Body/Left/CenterContainer/Content/ArticleTools/Margin/Skills/HBoxContainer4" instance=ExtResource( 5 )]
+margin_left = 167.0
+margin_right = 324.0
+margin_bottom = 24.0
+label = "Git, Github"
+progress = 100.0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="FSversionFr/Body/Left/CenterContainer/Content/ArticleTools/Margin/Skills"]
+margin_top = 72.0
+margin_right = 324.0
+margin_bottom = 96.0
+custom_constants/separation = 10
+
+[node name="Skill7" parent="FSversionFr/Body/Left/CenterContainer/Content/ArticleTools/Margin/Skills/HBoxContainer2" instance=ExtResource( 5 )]
+margin_right = 157.0
+margin_bottom = 24.0
+label = "Ubuntu, Unix"
+progress = 86.512
+
+[node name="Skill6" parent="FSversionFr/Body/Left/CenterContainer/Content/ArticleTools/Margin/Skills/HBoxContainer2" instance=ExtResource( 5 )]
+margin_left = 167.0
+margin_right = 324.0
+margin_bottom = 24.0
+label = "MongoDB & SQL"
+progress = 86.047
+
+[node name="HBoxContainer" type="HBoxContainer" parent="FSversionFr/Body/Left/CenterContainer/Content/ArticleTools/Margin/Skills"]
+margin_top = 108.0
+margin_right = 324.0
+margin_bottom = 132.0
+custom_constants/separation = 10
+
+[node name="Skill2" parent="FSversionFr/Body/Left/CenterContainer/Content/ArticleTools/Margin/Skills/HBoxContainer" instance=ExtResource( 5 )]
+margin_right = 157.0
+margin_bottom = 24.0
+label = "Heroku"
+progress = 100.0
+
+[node name="Skill" parent="FSversionFr/Body/Left/CenterContainer/Content/ArticleTools/Margin/Skills/HBoxContainer" instance=ExtResource( 5 )]
+margin_left = 167.0
+margin_right = 324.0
+margin_bottom = 24.0
+label = "HTML/SASS"
+progress = 61.861
+
+[node name="ArticleLangs" parent="FSversionFr/Body/Left/CenterContainer/Content" instance=ExtResource( 2 )]
+margin_top = 586.0
+margin_right = 339.0
+margin_bottom = 685.0
+
+[node name="Title" parent="FSversionFr/Body/Left/CenterContainer/Content/ArticleLangs" instance=ExtResource( 4 )]
+margin_right = 339.0
+margin_bottom = 31.0
+text = "Langues"
+
+[node name="Margin" type="MarginContainer" parent="FSversionFr/Body/Left/CenterContainer/Content/ArticleLangs"]
+margin_top = 41.0
+margin_right = 339.0
+margin_bottom = 99.0
+custom_constants/margin_right = 15
+custom_constants/margin_top = 12
+
+[node name="Skills" type="HBoxContainer" parent="FSversionFr/Body/Left/CenterContainer/Content/ArticleLangs/Margin"]
+margin_top = 12.0
+margin_right = 324.0
+margin_bottom = 58.0
+custom_constants/separation = 12
+
+[node name="Skill2" parent="FSversionFr/Body/Left/CenterContainer/Content/ArticleLangs/Margin/Skills" instance=ExtResource( 5 )]
+margin_right = 100.0
+margin_bottom = 46.0
+label = "Français C2"
+progress = 100.0
+
+[node name="Skill" parent="FSversionFr/Body/Left/CenterContainer/Content/ArticleLangs/Margin/Skills" instance=ExtResource( 5 )]
+margin_left = 112.0
+margin_right = 212.0
+margin_bottom = 46.0
+label = "Anglais B2"
+progress = 90.51
+
+[node name="Skill3" parent="FSversionFr/Body/Left/CenterContainer/Content/ArticleLangs/Margin/Skills" instance=ExtResource( 5 )]
+margin_left = 224.0
+margin_right = 324.0
+margin_bottom = 46.0
+label = "Espagnol A2"
+progress = 72.093
+
+[node name="ArticleStats" parent="FSversionFr/Body/Left/CenterContainer/Content" instance=ExtResource( 2 )]
+margin_top = 740.0
+margin_right = 339.0
+margin_bottom = 887.0
+
+[node name="Title" parent="FSversionFr/Body/Left/CenterContainer/Content/ArticleStats" instance=ExtResource( 4 )]
+margin_right = 339.0
+margin_bottom = 31.0
+text = "Quelques chiffres"
+
+[node name="Margin" type="MarginContainer" parent="FSversionFr/Body/Left/CenterContainer/Content/ArticleStats"]
+margin_top = 41.0
+margin_right = 339.0
+margin_bottom = 147.0
+custom_constants/margin_right = 15
+custom_constants/margin_top = 12
+
+[node name="Achievements" type="VBoxContainer" parent="FSversionFr/Body/Left/CenterContainer/Content/ArticleStats/Margin"]
+margin_top = 12.0
+margin_right = 324.0
+margin_bottom = 106.0
+custom_constants/separation = 12
+
+[node name="Stat3" parent="FSversionFr/Body/Left/CenterContainer/Content/ArticleStats/Margin/Achievements" instance=ExtResource( 6 )]
+margin_right = 324.0
+margin_bottom = 24.0
+label = "Nombre de jeux  publiés"
+number = 5.0
+
+[node name="Margin2" type="MarginContainer" parent="FSversionFr/Body/Left/CenterContainer/Content/ArticleStats/Margin/Achievements"]
+margin_top = 36.0
+margin_right = 324.0
+margin_bottom = 94.0
+custom_constants/margin_right = 15
+custom_constants/margin_top = 12
+
+[node name="Lines" type="VBoxContainer" parent="FSversionFr/Body/Left/CenterContainer/Content/ArticleStats/Margin/Achievements/Margin2"]
+margin_top = 12.0
+margin_right = 309.0
+margin_bottom = 58.0
+custom_constants/separation = 12
+
+[node name="Singleline" parent="FSversionFr/Body/Left/CenterContainer/Content/ArticleStats/Margin/Achievements/Margin2/Lines" instance=ExtResource( 7 )]
+margin_right = 309.0
+margin_bottom = 46.0
+label = "33e sur 5401 en  originalité pour la \"GMTK game jam 2020\"."
+
+[node name="ArticleHobbies" parent="FSversionFr/Body/Left/CenterContainer/Content" instance=ExtResource( 2 )]
+margin_top = 942.0
+margin_right = 339.0
+margin_bottom = 1113.0
+
+[node name="Title" parent="FSversionFr/Body/Left/CenterContainer/Content/ArticleHobbies" instance=ExtResource( 4 )]
+margin_right = 339.0
+margin_bottom = 31.0
+text = "Centres d'intérêts"
+
+[node name="Margin" type="MarginContainer" parent="FSversionFr/Body/Left/CenterContainer/Content/ArticleHobbies"]
+margin_top = 41.0
+margin_right = 339.0
+margin_bottom = 171.0
+custom_constants/margin_right = 15
+custom_constants/margin_top = 12
+
+[node name="Lines" type="VBoxContainer" parent="FSversionFr/Body/Left/CenterContainer/Content/ArticleHobbies/Margin"]
+margin_top = 12.0
+margin_right = 324.0
+margin_bottom = 130.0
+custom_constants/separation = 12
+
+[node name="Singleline2" parent="FSversionFr/Body/Left/CenterContainer/Content/ArticleHobbies/Margin/Lines" instance=ExtResource( 7 )]
+margin_right = 324.0
+margin_bottom = 46.0
+label = "Arts : Dessins à l'encre, \"pixelart\", théâtre (3 ans)"
+
+[node name="Singleline" parent="FSversionFr/Body/Left/CenterContainer/Content/ArticleHobbies/Margin/Lines" instance=ExtResource( 7 )]
+margin_top = 58.0
+margin_right = 324.0
+margin_bottom = 82.0
+label = "Lecture : Asimov, Haruki Murakami ..."
+
+[node name="Singleline3" parent="FSversionFr/Body/Left/CenterContainer/Content/ArticleHobbies/Margin/Lines" instance=ExtResource( 7 )]
+margin_top = 94.0
+margin_right = 324.0
+margin_bottom = 118.0
+label = "Écriture : SF, anticipation, articles"
+
+[node name="ArticleContact" parent="FSversionFr/Body/Left/CenterContainer/Content" instance=ExtResource( 2 )]
+margin_top = 1168.0
+margin_right = 339.0
+margin_bottom = 1317.0
+
+[node name="Title" parent="FSversionFr/Body/Left/CenterContainer/Content/ArticleContact" instance=ExtResource( 4 )]
+margin_right = 339.0
+margin_bottom = 31.0
+text = "Me contacter"
+
+[node name="Margin" type="MarginContainer" parent="FSversionFr/Body/Left/CenterContainer/Content/ArticleContact"]
+margin_top = 41.0
+margin_right = 339.0
+margin_bottom = 149.0
+custom_constants/margin_right = 15
+custom_constants/margin_top = 12
+
+[node name="Lines" type="VBoxContainer" parent="FSversionFr/Body/Left/CenterContainer/Content/ArticleContact/Margin"]
+margin_top = 12.0
+margin_right = 324.0
+margin_bottom = 108.0
+custom_constants/separation = 12
+
+[node name="Singleline" parent="FSversionFr/Body/Left/CenterContainer/Content/ArticleContact/Margin/Lines" instance=ExtResource( 7 )]
+margin_right = 324.0
+margin_bottom = 24.0
+label = "e-mail: an.nougaret@gmail.com"
+
+[node name="Singleline2" parent="FSversionFr/Body/Left/CenterContainer/Content/ArticleContact/Margin/Lines" instance=ExtResource( 7 )]
+margin_top = 36.0
+margin_right = 324.0
+margin_bottom = 60.0
+label = "mobile: +33783970255"
+
+[node name="Singleline3" parent="FSversionFr/Body/Left/CenterContainer/Content/ArticleContact/Margin/Lines" instance=ExtResource( 7 )]
+margin_top = 72.0
+margin_right = 324.0
+margin_bottom = 96.0
+label = "Github: /AnicetNgrt"
+
+[node name="Separator" parent="FSversionFr/Body" instance=ExtResource( 12 )]
+margin_bottom = 1607.0
+
+[node name="SharedPart" parent="FSversionFr/Body" instance=ExtResource( 15 )]
+margin_bottom = 1607.0
 
 [editable path="ImprobableVersionFr/Body/Left/CenterContainer/Content/ArticleStats/Margin/Achievements/Margin2/Lines/Singleline"]
