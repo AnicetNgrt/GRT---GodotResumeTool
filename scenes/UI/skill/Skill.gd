@@ -19,3 +19,11 @@ func set_show_bar(val):
 	if not is_inside_tree(): yield(self,"ready")
 	$Margin/Content/ProgressBar.visible = show_bar
 
+export(Color) var color setget set_color
+func set_color(val):
+	color = val
+	if not is_inside_tree(): yield(self,"ready")
+	$Panel.get("custom_styles/panel").bg_color = color
+
+func _ready():
+	color = $Panel.get("custom_styles/panel").bg_color

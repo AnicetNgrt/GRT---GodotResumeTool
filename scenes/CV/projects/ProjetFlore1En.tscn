@@ -1,0 +1,115 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/Roboto/Roboto-Medium.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://scenes/UI/h3/H3.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/UI/label/Label.tscn" type="PackedScene" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 18
+outline_color = Color( 0.117647, 0.133333, 0.141176, 1 )
+use_mipmaps = true
+use_filter = true
+extra_spacing_bottom = 2
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFontData" id=2]
+font_path = "res://assets/Roboto/Roboto-Medium.ttf"
+
+[sub_resource type="DynamicFont" id=3]
+size = 28
+outline_size = 2
+use_mipmaps = true
+use_filter = true
+extra_spacing_top = -5
+font_data = SubResource( 2 )
+
+[node name="ProjectFlore1En" type="MarginContainer"]
+margin_top = 376.0
+margin_right = 670.0
+margin_bottom = 587.0
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ProjectContent" type="VBoxContainer" parent="."]
+margin_left = 10.0
+margin_right = 670.0
+margin_bottom = 249.0
+custom_constants/separation = 17
+
+[node name="Meta" type="VBoxContainer" parent="ProjectContent"]
+margin_right = 660.0
+margin_bottom = 56.0
+
+[node name="Label" parent="ProjectContent/Meta" instance=ExtResource( 3 )]
+margin_top = 0.0
+margin_right = 660.0
+margin_bottom = 24.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.427451, 0.705882, 0.556863, 1 )
+custom_constants/line_spacing = 0
+text = "August 2019 -> February 2020 - Solo-developed"
+
+[node name="H3" parent="ProjectContent/Meta" instance=ExtResource( 2 )]
+margin_top = 28.0
+margin_right = 660.0
+margin_bottom = 56.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "\"Flore1: Python Graphics Library/Game Engine"
+
+[node name="ProjectDesc" type="MarginContainer" parent="ProjectContent"]
+margin_top = 73.0
+margin_right = 660.0
+margin_bottom = 201.0
+custom_constants/margin_left = 35
+
+[node name="Paragraphs" type="VBoxContainer" parent="ProjectContent/ProjectDesc"]
+margin_left = 35.0
+margin_right = 660.0
+margin_bottom = 128.0
+
+[node name="Label2" parent="ProjectContent/ProjectDesc/Paragraphs" instance=ExtResource( 3 )]
+margin_top = 0.0
+margin_right = 625.0
+margin_bottom = 24.0
+custom_fonts/font = SubResource( 1 )
+text = "Python ANSI-Art layer-based game engine rendering in the terminal."
+
+[node name="Label4" parent="ProjectContent/ProjectDesc/Paragraphs" instance=ExtResource( 3 )]
+margin_top = 28.0
+margin_right = 625.0
+margin_bottom = 52.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.427451, 0.705882, 0.556863, 1 )
+custom_constants/line_spacing = 0
+text = "Implemented systems:"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ProjectContent/ProjectDesc/Paragraphs"]
+margin_top = 56.0
+margin_right = 625.0
+margin_bottom = 128.0
+
+[node name="Label3" parent="ProjectContent/ProjectDesc/Paragraphs/HBoxContainer" instance=ExtResource( 3 )]
+margin_top = 0.0
+margin_right = 310.0
+margin_bottom = 72.0
+custom_fonts/font = SubResource( 1 )
+custom_constants/line_spacing = 0
+text = "- 30+fps multi-layer 2D rendering
+- Files and assets management
+- Picture files to ANSI rendering"
+
+[node name="Label4" parent="ProjectContent/ProjectDesc/Paragraphs/HBoxContainer" instance=ExtResource( 3 )]
+margin_left = 314.0
+margin_top = 0.0
+margin_right = 625.0
+margin_bottom = 72.0
+size_flags_vertical = 5
+custom_fonts/font = SubResource( 1 )
+custom_constants/line_spacing = 0
+text = "- Animation players
+- Inputs handling
+- FPS and speed stabilization"

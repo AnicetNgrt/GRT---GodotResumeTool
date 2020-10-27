@@ -1,26 +1,10 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/Roboto/Roboto-Bold.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://scenes/UI/Title.gd" type="Script" id=2]
+[ext_resource path="res://scenes/UI/title/Title.gd" type="Script" id=2]
+[ext_resource path="res://scenes/UI/styleboxes/sbTitle.tres" type="StyleBox" id=3]
 
-[sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.737255, 0.811765, 0.831373, 1 )
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color( 1, 1, 1, 1 )
-border_blend = true
-corner_radius_top_left = 10
-corner_radius_bottom_right = 10
-expand_margin_right = 3.0
-expand_margin_top = 3.0
-expand_margin_bottom = 3.0
-shadow_color = Color( 0.737255, 0.811765, 0.831373, 1 )
-shadow_size = 1
-shadow_offset = Vector2( -5, 5 )
-
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=1]
 size = 25
 use_mipmaps = true
 use_filter = true
@@ -40,13 +24,13 @@ margin_right = 231.0
 margin_bottom = 33.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/panel = SubResource( 1 )
+custom_styles/panel = ExtResource( 3 )
 
 [node name="Label" type="Label" parent="."]
 margin_top = 1.0
 margin_right = 231.0
 margin_bottom = 32.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_constants/line_spacing = -5
 align = 1

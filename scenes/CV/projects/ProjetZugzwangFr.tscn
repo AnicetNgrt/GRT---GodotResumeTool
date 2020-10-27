@@ -1,0 +1,101 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/Roboto/Roboto-Medium.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://scenes/UI/h3/H3.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/UI/label/Label.tscn" type="PackedScene" id=3]
+
+[sub_resource type="DynamicFont" id=3]
+size = 18
+outline_color = Color( 0.117647, 0.133333, 0.141176, 1 )
+use_mipmaps = true
+use_filter = true
+extra_spacing_bottom = 2
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFontData" id=4]
+font_path = "res://assets/Roboto/Roboto-Medium.ttf"
+
+[sub_resource type="DynamicFont" id=5]
+size = 28
+outline_size = 2
+use_mipmaps = true
+use_filter = true
+extra_spacing_top = -5
+font_data = SubResource( 4 )
+
+[node name="ProjectZugzwangFr" type="MarginContainer"]
+margin_top = 68.0
+margin_right = 670.0
+margin_bottom = 351.0
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+
+[node name="ProjectContent" type="VBoxContainer" parent="."]
+margin_left = 10.0
+margin_right = 670.0
+margin_bottom = 273.0
+custom_constants/separation = 17
+
+[node name="Meta" type="VBoxContainer" parent="ProjectContent"]
+margin_right = 660.0
+margin_bottom = 56.0
+
+[node name="Label" type="Label" parent="ProjectContent/Meta" instance=ExtResource( 3 )]
+margin_right = 660.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.427451, 0.705882, 0.556863, 1 )
+custom_constants/shadow_offset_x = -2
+custom_constants/line_spacing = 0
+custom_constants/shadow_offset_y = 2
+text = "Juillet 2019 -> Maintenant  -  Développé seul"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="H3" type="Label" parent="ProjectContent/Meta" instance=ExtResource( 2 )]
+margin_top = 28.0
+margin_right = 660.0
+margin_bottom = 56.0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0.203922, 0.294118, 0.341176, 0 )
+custom_constants/line_spacing = 0
+text = "\"Zugzwang/Patherns\": Jeu de stratégie en ligne"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ProjectDesc" type="MarginContainer" parent="ProjectContent"]
+margin_top = 73.0
+margin_right = 660.0
+margin_bottom = 273.0
+custom_constants/margin_left = 35
+
+[node name="Paragraphs" type="VBoxContainer" parent="ProjectContent/ProjectDesc"]
+margin_left = 35.0
+margin_right = 660.0
+margin_bottom = 200.0
+
+[node name="Label2" type="Label" parent="ProjectContent/ProjectDesc/Paragraphs" instance=ExtResource( 3 )]
+margin_right = 625.0
+margin_bottom = 200.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = -2
+custom_constants/line_spacing = -2
+custom_constants/shadow_offset_y = 2
+text = "Premier jeu à finalité commerciale. Actuellement en phase de production après le développement d'un prototype papier et de nombreux prototypes sur ordinateur, ayant requis de nombreux apprentissages et itérations.
+
+- Prototype en Java, création de serveurs TCP pour le backend.
+- Prototype web utilisant React, Typescript et Electron.
+- Prototype PC utilisant Godot Engine et MongoDB pour le backend.
+- 2e itération de la version PC utilisant Flask et SQLite, avec des serveurs dédiés en node.js déployés sur Heroku."
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}

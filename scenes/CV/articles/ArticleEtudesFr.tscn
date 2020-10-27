@@ -1,0 +1,129 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://assets/Roboto/Roboto-Medium.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://scenes/UI/article/Article.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/UI/h3/H3.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/UI/h1/H1.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/UI/label/Label.tscn" type="PackedScene" id=5]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://assets/Roboto/Roboto-Medium.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 45
+outline_size = 2
+use_mipmaps = true
+use_filter = true
+extra_spacing_top = -10
+font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 18
+outline_color = Color( 0.117647, 0.133333, 0.141176, 1 )
+use_mipmaps = true
+use_filter = true
+extra_spacing_bottom = 2
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFontData" id=4]
+font_path = "res://assets/Roboto/Roboto-Medium.ttf"
+
+[sub_resource type="DynamicFont" id=5]
+size = 28
+outline_size = 2
+use_mipmaps = true
+use_filter = true
+extra_spacing_top = -5
+font_data = SubResource( 4 )
+
+[node name="ArticleEtudesFr" type="MarginContainer"]
+margin_top = 190.0
+margin_right = 670.0
+margin_bottom = 395.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Article1" parent="." instance=ExtResource( 2 )]
+margin_right = 670.0
+margin_bottom = 205.0
+custom_constants/separation = 25
+
+[node name="H1" parent="Article1" instance=ExtResource( 4 )]
+margin_right = 670.0
+margin_bottom = 43.0
+custom_fonts/font = SubResource( 2 )
+text = "Parcours scolaire"
+
+[node name="Education2" type="MarginContainer" parent="Article1"]
+margin_top = 68.0
+margin_right = 670.0
+margin_bottom = 124.0
+custom_constants/margin_left = 10
+
+[node name="EducationContent" type="VBoxContainer" parent="Article1/Education2"]
+margin_left = 10.0
+margin_right = 670.0
+margin_bottom = 56.0
+custom_constants/separation = 17
+
+[node name="Meta" type="VBoxContainer" parent="Article1/Education2/EducationContent"]
+margin_right = 660.0
+margin_bottom = 56.0
+
+[node name="Label" parent="Article1/Education2/EducationContent/Meta" instance=ExtResource( 5 )]
+margin_top = 0.0
+margin_right = 660.0
+margin_bottom = 24.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.427451, 0.705882, 0.556863, 1 )
+custom_constants/line_spacing = 0
+text = "Septembre 2019 -> Juillet 2021"
+
+[node name="H3" parent="Article1/Education2/EducationContent/Meta" instance=ExtResource( 3 )]
+margin_top = 28.0
+margin_right = 660.0
+margin_bottom = 56.0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "IUT de Paris Descartes - Section Informatique"
+
+[node name="Education" type="MarginContainer" parent="Article1"]
+margin_top = 149.0
+margin_right = 670.0
+margin_bottom = 205.0
+custom_constants/margin_left = 10
+
+[node name="EducationContent" type="VBoxContainer" parent="Article1/Education"]
+margin_left = 10.0
+margin_right = 670.0
+margin_bottom = 56.0
+custom_constants/separation = 17
+
+[node name="Meta" type="VBoxContainer" parent="Article1/Education/EducationContent"]
+margin_right = 660.0
+margin_bottom = 56.0
+
+[node name="Label" parent="Article1/Education/EducationContent/Meta" instance=ExtResource( 5 )]
+margin_top = 0.0
+margin_right = 660.0
+margin_bottom = 24.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.427451, 0.705882, 0.556863, 1 )
+custom_constants/line_spacing = 0
+text = "Juillet 2019"
+
+[node name="H3" parent="Article1/Education/EducationContent/Meta" instance=ExtResource( 3 )]
+margin_top = 28.0
+margin_right = 660.0
+margin_bottom = 56.0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Baccalauréat scientifique mention très bien"
+
+[node name="Label3" parent="Article1/Education/EducationContent/Meta" instance=ExtResource( 5 )]
+visible = false
+margin_top = 60.0
+margin_right = 660.0
+margin_bottom = 84.0
+custom_fonts/font = SubResource( 3 )

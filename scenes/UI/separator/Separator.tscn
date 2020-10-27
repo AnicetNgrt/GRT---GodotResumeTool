@@ -18,4 +18,4 @@ margin_top = 15.0
 margin_right = 19.0
 margin_bottom = 1554.0
 rect_min_size = Vector2( 4, 0 )
-color = Color( 0.737255, 0.811765, 0.831373, 1 )
+color = Color( 0.556863, 0.960784, 0.741176, 1 )
