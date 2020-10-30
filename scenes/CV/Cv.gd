@@ -6,11 +6,14 @@ func _input(event):
 		img.flip_y()
 		yield(get_tree(), "idle_frame")
 		yield(get_tree(), "idle_frame")
-		img.save_png("user://CV"+str(randi()%50)+".png")
+		var name = ""
+		for child in get_children():
+			if child is MarginContainer:
+				if child.visible: name = child.name
+		img.save_png("user://CV"+name+str(randi()%50)+".png")
 		print(OS.get_user_data_dir())
 	if Input.is_action_just_pressed("switch"):
-		$GDEVversion.visible = !$GDEVversion.visible
-		$PROGversion.visible = !$PROGversion.visible
+		pass
 	
 func _ready():
 	randomize()

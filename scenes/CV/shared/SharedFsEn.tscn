@@ -39,7 +39,7 @@ __meta__ = {
 [node name="Content" type="VBoxContainer" parent="."]
 margin_top = 35.0
 margin_right = 670.0
-margin_bottom = 1563.0
+margin_bottom = 1554.0
 custom_constants/separation = 35
 
 [node name="ArticleAproposFsEn" parent="Content" instance=ExtResource( 7 )]

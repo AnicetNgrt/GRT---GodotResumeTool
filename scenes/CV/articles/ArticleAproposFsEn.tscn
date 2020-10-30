@@ -21,7 +21,7 @@ __meta__ = {
 
 [node name="Article" parent="." instance=ExtResource( 2 )]
 margin_right = 670.0
-margin_bottom = 348.0
+margin_bottom = 174.0
 
 [node name="Margin" type="MarginContainer" parent="Article"]
 margin_right = 670.0
@@ -33,6 +33,5 @@ margin_right = 670.0
 margin_bottom = 174.0
 custom_fonts/font = SubResource( 1 )
 custom_constants/line_spacing = 0
-text = "19 year old in penultimate year of a 2 year long CS formation within Universite de Paris, France. Curious, open minded and dedicated programmer for 4+ years. Lead several projects across varied fields and stacks (games, chat bots, tools, web apps...).
-Looking for a 10+ week long full stack engineering internship software starting in April 2021."
+text = "19 year old in penultimate year of a 2 year long CS formation within Universite de Paris, France. Curious, open minded and dedicated programmer for 4+ years. Lead several projects from pre-production to self-publishing and marketing across varied fields and stacks. Looking for a 10+ week long full stack software engineering internship starting in April 2021."
 align = 3

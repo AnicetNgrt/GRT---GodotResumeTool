@@ -33,5 +33,5 @@ margin_right = 670.0
 margin_bottom = 145.0
 custom_fonts/font = SubResource( 1 )
 custom_constants/line_spacing = 0
-text = "Étudiant en 2e année d'études en Informatique et programmeur passionné depuis 4 ans ayant mené plusieurs projets couvrant tout le stack (chat bots, web app, jeux) de la pré-production à la publication. Je recherche un stage en tant que développeur full stack, d'une durée d'au moins 10 semaines à partir d'avril 2021"
+text = "Étudiant en 2e année d'études en Informatique et programmeur passionné depuis 4 ans ayant mené plusieurs projets couvrant tout le stack (chat bots, web apps, jeux, outils) de la pré-production à la publication. Je recherche un stage en tant que développeur full stack, d'une durée d'au moins 10 semaines à partir d'avril 2021"
 align = 3
